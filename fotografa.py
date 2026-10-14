@@ -46,6 +46,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.parse
 from pathlib import Path
 
@@ -122,7 +123,12 @@ def leggi_calendario(cfg, oggi, adesso):
         return None
     letto = adesso.strftime("%H:%M")
     base = c["golee_api"].format(org=c["golee_organizzazione"])
-    tipo = c.get("tipo", "Allenamento")
+    tipi = {s.lower() for s in c.get("tipi", ["Allenamento", "practice"])}
+
+    def e_allenamento(e):
+        # Il 14/10/2026 Golee ha cambiato il campo type da "Allenamento" a "practice" senza avviso:
+        # vale il tipo (lista nel config) OPPURE il titolo che comincia con "Allenamento".
+        return (str(e.get("type") or "").lower() in tipi or str(e.get("title") or "").lower().startswith("allenamento")) and not e.get("allDay")
     avanti = int(c.get("giorni_avanti", 14))
     eventi, visti = [], set()
     try:
@@ -131,10 +137,20 @@ def leggi_calendario(cfg, oggi, adesso):
             a = min(oggi + dt.timedelta(days=k + 7), oggi + dt.timedelta(days=avanti))
             url = base + "?" + urllib.parse.urlencode({"fromDate": da.isoformat(), "toDate": a.isoformat()})
             risposta = motore.scarica(url, "calendario", timeout=30)
+            if isinstance(risposta, list) and not risposta:
+                time.sleep(5)  # una risposta vuota si riprova una volta prima di crederci
+                risposta = motore.scarica(url, "calendario", timeout=30)
             if not isinstance(risposta, list):
                 raise motore.FonteNonRisponde(f"risposta inattesa: {str(risposta)[:120]}")
+            if k == 0 and not any(isinstance(e, dict) and e_allenamento(e) for e in risposta):
+                # Se la settimana di oggi non ha nessun allenamento riconoscibile e la successiva sì,
+                # ogni gruppo risulterebbe «annullato dai coach»: un falso annullamento. Successo il
+                # 14/10/2026 alle 17:49, quando Golee ha rinominato il tipo di evento. Settimana di oggi
+                # senza allenamenti = calendario non affidabile, si dice e non si annulla niente.
+                motivo = "tornato vuoto" if not risposta else f"{len(risposta)} eventi ma nessuno riconosciuto come allenamento (Golee ha cambiato formato?)"
+                raise motore.FonteNonRisponde(f"calendario Golee di questa settimana {motivo}: risposta non affidabile")
             for e in risposta:
-                if e.get("type") != tipo or e.get("allDay") or e.get("id") in visti:
+                if not e_allenamento(e) or e.get("id") in visti:
                     continue
                 visti.add(e.get("id"))
                 ini, fin = in_ora_italiana(e["start"]), in_ora_italiana(e["end"])

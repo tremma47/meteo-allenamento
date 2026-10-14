@@ -190,5 +190,7 @@ fulmini_mappa = "https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=
 scheda = "https://golee.it/clubs/sharks-football-asd"
 golee_api = "https://api.golee.it/calendar/public/organizations/{org}/calendars/common/events"
 golee_organizzazione = "664772772dc8d2c457668f8e"
-tipo = "Allenamento"
+# Il campo "type" degli eventi: era "Allenamento", dal pomeriggio del 14/10/2026 Golee scrive
+# "practice". Vale uno qualsiasi di questi, oppure un titolo che comincia con "Allenamento".
+tipi = ["Allenamento", "practice"]
 giorni_avanti = 14
