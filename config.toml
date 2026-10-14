@@ -67,9 +67,11 @@ regola = "grandi"
 giorni = ["lun"]
 inizio = "20:00"
 fine = "22:00"
-golee = ["Senior F", "Ragazze", "Femminile"]
-# fonte: Fabrizio, 13/10/2026. Al 14/10/2026 Golee non ha allenamenti per questo gruppo:
-# finché non ci sono, la pagina non dice niente del calendario per le ragazze.
+golee = ["Senior Femminile"]
+# fonte: Fabrizio, 13/10/2026. In Golee l'allenamento si chiama "Allenamento Senior Femminile"
+# (Fabrizio, 14/10/2026), ma al 14/10/2026 nel calendario pubblico non ce n'è nessuno da
+# settembre a novembre: finché non vengono creati, la pagina non dice niente del calendario
+# per le ragazze (gruppo "non tracciato"), e il verdetto resta quello del meteo.
 
 [[gruppi]]
 nome = "Senior M"
@@ -78,7 +80,10 @@ giorni = ["lun", "mer"]
 inizio = "20:30"
 fine = "22:00"
 dal = 2026-11-01
-golee = ["Senior M", "Maschile"]
+golee = ["Senior Maschile"]
+# nome Golee supposto per simmetria con "Senior Femminile": da verificare quando gli
+# allenamenti dei senior compariranno nel calendario (da novembre). Se non combacia, il
+# gruppo resta "non tracciato" (nessun falso annullamento).
 # fonte: Vademecum 2026/27 (senior da novembre), confermato da Fabrizio il 13/10/2026
 
 # ---------------------------------------------------------------------------
