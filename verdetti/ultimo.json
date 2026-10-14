@@ -146,7 +146,15 @@
    "icon2i_oggi_ieri_mm": [
     0,
     0
-   ]
+   ],
+   "coach": {
+    "stato": "in_programma",
+    "letto": "08:29",
+    "in_programma": [
+     "Allenamento MiniFlag 18:30-20:00"
+    ],
+    "annullati": []
+   }
   },
   {
    "gruppo": "Under 13 + Under 15",
@@ -170,7 +178,16 @@
    "icon2i_oggi_ieri_mm": [
     0,
     0
-   ]
+   ],
+   "coach": {
+    "stato": "in_programma",
+    "letto": "08:29",
+    "in_programma": [
+     "Allenamento Under 13 18:30-20:00",
+     "Allenamento Under 15 18:30-20:00"
+    ],
+    "annullati": []
+   }
   }
  ],
  "testo": "METEO ALLENAMENTO · mercoledì 14/10/2026 · controllo delle 08:10\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nALLERTA per il 14/10 (bollettino DPC del 13/10 14:08, parte «domani»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> SI FA\nNessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).\nDecisione da comunicare entro le 15:30.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> SI FA\nNessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nRADAR 07:10→08:10: nessuna pioggia entro 100 km dal campo. [3 tessere non scaricate] Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar ok\nProssimo controllo previsto alle 15:30.",
@@ -292,5 +309,31 @@
     }
    ]
   }
- ]
+ ],
+ "calendario": {
+  "letto": "08:29",
+  "scheda": "https://golee.it/clubs/sharks-football-asd",
+  "errore": null,
+  "allenamenti_oggi": [
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento MiniFlag"
+   },
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento Under 13"
+   },
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento Under 15"
+   }
+  ],
+  "allenamenti_in_calendario": 15
+ }
 }
