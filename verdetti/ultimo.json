@@ -155,8 +155,12 @@
    "probabilita_pioggia": 0,
    "conferma": 100,
    "coach": {
-    "stato": "non_tracciato",
-    "letto": "17:49"
+    "stato": "in_programma",
+    "letto": "17:53",
+    "in_programma": [
+     "Allenamento MiniFlag 18:30-20:00"
+    ],
+    "annullati": []
    }
   },
   {
@@ -189,8 +193,13 @@
    "probabilita_pioggia": 0,
    "conferma": 100,
    "coach": {
-    "stato": "non_tracciato",
-    "letto": "17:49"
+    "stato": "in_programma",
+    "letto": "17:53",
+    "in_programma": [
+     "Allenamento Under 13 18:30-20:00",
+     "Allenamento Under 15 18:30-20:00"
+    ],
+    "annullati": []
    }
   },
   {
@@ -223,8 +232,12 @@
    "probabilita_pioggia": 0,
    "conferma": 100,
    "coach": {
-    "stato": "non_tracciato",
-    "letto": "17:49"
+    "stato": "in_programma",
+    "letto": "17:53",
+    "in_programma": [
+     "Allenamento Senior Femminile 20:30-22:00"
+    ],
+    "annullati": []
    }
   }
  ],
@@ -364,10 +377,35 @@
   }
  ],
  "calendario": {
-  "letto": "17:49",
+  "letto": "17:53",
   "scheda": "https://golee.it/clubs/sharks-football-asd",
   "errore": null,
-  "allenamenti_oggi": [],
-  "allenamenti_in_calendario": 0
+  "allenamenti_oggi": [
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento MiniFlag"
+   },
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento Under 13"
+   },
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento Under 15"
+   },
+   {
+    "data": "2026-10-14",
+    "inizio": "20:30",
+    "fine": "22:00",
+    "titolo": "Allenamento Senior Femminile"
+   }
+  ],
+  "allenamenti_in_calendario": 20
  }
 }
