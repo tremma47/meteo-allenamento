@@ -13,7 +13,8 @@ dal campo, qualunque sia il verdetto.
 ## Cosa c'è qui
 
 - `meteo_allenamento.py` — il motore, unico: legge le fonti e applica la regola.
-- `config.toml` — campo, gruppi, orari, soglie: **l'unico posto** dove si cambiano.
+- `config.toml` — campo, gruppi, orari, soglie (anche quelle del consiglio di abbigliamento):
+  **l'unico posto** dove si cambiano.
 - `fotografa.py` — agli orari dei controlli lancia il motore e salva il verdetto in
   `verdetti/` (`ultimo.json` per la pagina, `ultimo.txt` per leggerlo da qui, più la storia);
   ogni 10 minuti nel pomeriggio rilegge il calendario ufficiale dell'associazione (la scheda
