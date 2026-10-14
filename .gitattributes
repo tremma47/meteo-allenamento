@@ -1,0 +1,5 @@
+# Fine riga: tutto LF (così pubblica_pagina.sh gira in Git Bash anche su Windows),
+# tranne il .bat che Windows vuole in CRLF.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
