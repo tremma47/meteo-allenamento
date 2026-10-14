@@ -144,7 +144,7 @@ def gruppi_del_giorno(cfg, data, tutti=False):
 
 
 # ----------------------------------------------------------------------------- modelli
-VARIABILI = ("precipitation", "weather_code", "cape", "lightning_potential", "wind_gusts_10m")
+VARIABILI = ("precipitation", "weather_code", "cape", "lightning_potential", "wind_gusts_10m", "temperature_2m")
 
 
 def previsioni(cfg, data):
@@ -558,13 +558,44 @@ def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
                 righe.append(f"Attenzione: hanno risposto solo {n_modelli(n_ok)} su {n_tot}.")
     if g["regola"] == "piccoli" and g.get("decisione_entro"):
         righe.append(f"Decisione da comunicare entro le {g['decisione_entro']}.")
+    temperatura, abbigliamento = consiglio_abbigliamento(cfg, mod, ore, piovosi)
+    if abbigliamento and esito != "ANNULLATO":
+        righe.append(f"Abbigliamento: {abbigliamento} ({temperatura:.0f} °C previsti).")
     mm_riga = " · ".join(f"{m['nome']} {it_mm(mm.get(m['nome']))}" for m in cfg["fonti"]["modelli"])
     righe.append(f"mm previsti {ore[0][:2]}-{ore[-1][:2]}: {mm_riga}")
     if cambio and abs(cambio[0] - cambio[1]) < s["cambio_idea_mm"] and (cambio[0] or cambio[1]):
         righe.append(f"ICON-2I ieri per questa fascia dava {it_mm(cambio[1])} mm, oggi {it_mm(cambio[0])}.")
     return {"gruppo": g["nome"], "fascia": f"{g['inizio']}-{g['fine']}", "regola": g["regola"], "esito": esito,
             "titolo": titolo, "motivi": righe, "mm_per_modello": mm, "modelli_piovosi": piovosi, "segnali": segnali,
-            "icon2i_oggi_ieri_mm": cambio}
+            "icon2i_oggi_ieri_mm": cambio, "temperatura": temperatura, "abbigliamento": abbigliamento}
+
+
+def consiglio_abbigliamento(cfg, mod, ore, piovosi):
+    """Temperatura media prevista nella fascia (media dei modelli che l'hanno data) e il
+    consiglio su cosa indossare, con le soglie di [abbigliamento] in config.toml
+    (richiesta di Fabrizio del 14/10/2026). Non è una regola del verdetto: è un consiglio
+    per atleti e genitori. Torna (temperatura, testo) oppure (None, None)."""
+    a = cfg.get("abbigliamento")
+    if not a:
+        return None, None
+    valori = []
+    for m in mod.values():
+        t = [m["ore"].get(o, {}).get("temperature_2m") for o in ore]
+        t = [v for v in t if v is not None]
+        if t:
+            valori.append(sum(t) / len(t))
+    if not valori:
+        return None, None
+    temperatura = sum(valori) / len(valori)
+    if temperatura < a["felpa_sotto"]:
+        capo = "felpa"
+    elif temperatura < a["maniche_lunghe_sotto"]:
+        capo = "maniche lunghe"
+    else:
+        capo = "maglietta"
+    if piovosi and a.get("kway_se_pioggia", True):
+        capo += " e k-way per la pioggia"
+    return temperatura, capo
 
 
 # ----------------------------------------------------------------------------- testo

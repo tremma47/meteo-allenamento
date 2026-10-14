@@ -136,6 +136,20 @@ radar_raggio_vicino_km = 25   # pioggia entro questo raggio = "vicina"
 radar_crescita_x = 2.0        # area di pioggia entro 100 km cresciuta di tanto in un'ora = celle in formazione
 
 # ---------------------------------------------------------------------------
+# ABBIGLIAMENTO (richiesta di Fabrizio del 14/10/2026): consiglio per atleti e genitori,
+# in base alla temperatura media prevista nella fascia dell'allenamento (media dei modelli).
+# Non è una regola del verdetto. Soglie di partenza proposte, da tarare:
+#   sotto felpa_sotto           -> felpa
+#   fra le due soglie           -> maniche lunghe
+#   da maniche_lunghe_sotto     -> maglietta
+#   se almeno un modello prevede pioggia nella fascia -> "e k-way per la pioggia"
+# ---------------------------------------------------------------------------
+[abbigliamento]
+felpa_sotto = 15
+maniche_lunghe_sotto = 20
+kway_se_pioggia = true
+
+# ---------------------------------------------------------------------------
 # FONTI (tutte gratuite, senza chiave). Non toccare se non si sa cosa si fa.
 # ---------------------------------------------------------------------------
 [fonti]
