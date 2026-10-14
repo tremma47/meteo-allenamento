@@ -138,6 +138,7 @@ details.testo pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.84rem;l
 .meteo .kicker{margin-bottom:4px}
 .meteo-righe{list-style:none;margin:0;padding:0;font-size:.98rem}
 .meteo-righe li{padding:8px 0;border-top:1px solid var(--bordo)}
+.meteo-righe .riga{display:block}
 .meteo-righe .et{font-family:var(--kicker);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:10.5px;color:var(--grigio);display:block;margin-bottom:1px}
 .meteo-righe li.fulmini{background:var(--nero);color:#fff;margin:8px -16px 0;padding:12px 16px;border-top:none}
 .meteo-righe li.fulmini .et{color:var(--giallo)}
@@ -306,7 +307,7 @@ footer .firma{font-family:var(--kicker);font-size:11px;letter-spacing:.14em;text
   function rigaMeteo(etichetta, testo) {
     var li = el('li');
     li.appendChild(el('span', 'et', etichetta));
-    li.appendChild(document.createTextNode(testo));
+    (Array.isArray(testo) ? testo : [testo]).forEach(function (r) { li.appendChild(el('span', 'riga', r)); });
     return li;
   }
   function gradi(x) { return x == null ? null : Math.round(x) + ' °C'; }
@@ -327,14 +328,14 @@ footer .firma{font-family:var(--kicker);font-size:11px;letter-spacing:.14em;text
     var fasce = [], perFascia = {};
     verdetti.forEach(function (v) { if (!(v.fascia in perFascia)) { perFascia[v.fascia] = v; fasce.push(v.fascia); } });
     var temp = fasce.map(function (fx) { var g = gradi(perFascia[fx].temperatura); return g ? (fasce.length > 1 ? fx + ': ' : '') + g : null; }).filter(Boolean);
-    if (temp.length) ul.appendChild(rigaMeteo('Temperatura prevista', temp.join(' · ')));
+    if (temp.length) ul.appendChild(rigaMeteo('Temperatura prevista', temp));
     var pioggia = fasce.map(function (fx) {
       var n = (perFascia[fx].modelli_piovosi || []).length;
       return (fasce.length > 1 ? fx + ': ' : '') + (tot === 0 ? 'modelli non disponibili' : n === 0 ? 'no' : 'sì, ' + n + (n === 1 ? ' modello' : ' modelli') + ' su ' + tot);
     });
-    ul.appendChild(rigaMeteo('Pioggia prevista', pioggia.join(' · ') || 'n.d.'));
+    ul.appendChild(rigaMeteo('Pioggia prevista', pioggia.length ? pioggia : 'n.d.'));
     var prob = fasce.map(function (fx) { var v = perFascia[fx].probabilita_pioggia; return v == null ? null : (fasce.length > 1 ? fx + ': ' : '') + v + '%'; }).filter(Boolean);
-    if (prob.length) ul.appendChild(rigaMeteo('Probabilità di pioggia', prob.join(' · ')));
+    if (prob.length) ul.appendChild(rigaMeteo('Probabilità di pioggia', prob));
     var segnali = [];
     verdetti.forEach(function (v) { (v.segnali || []).forEach(function (s) { if (segnali.indexOf(s) < 0) segnali.push(s); }); });
     ul.appendChild(rigaMeteo('Possibili temporali', segnali.length ? 'sì: ' + segnali[0] + (segnali.length > 1 ? ' (e altri ' + (segnali.length - 1) + ')' : '') : 'no'));
