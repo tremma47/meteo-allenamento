@@ -194,12 +194,17 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
 (function () {
   'use strict';
   // Da dove arriva il verdetto. Il file lo scrive GitHub Actions agli orari dei controlli.
-  var FONTE = 'https://raw.githubusercontent.com/sharks-palermo/meteo-allenamento/main/verdetti/ultimo.json';
+  // Si prova in ordine: prima l'organizzazione (dove il deposito andrà), poi l'account dove è nato
+  // (14/10/2026). Così la pagina si pubblica una volta sola e il trasferimento non la rompe.
+  var FONTI = [
+    'https://raw.githubusercontent.com/sharks-palermo/meteo-allenamento/main/verdetti/ultimo.json',
+    'https://raw.githubusercontent.com/tremma47/meteo-allenamento/main/verdetti/ultimo.json'
+  ];
   var OGNI_MINUTI = 5;           // ogni quanto la pagina si ricarica da sola, se resta aperta
   var RITARDO_TOLLERATO = 25;    // minuti dopo l'ora del controllo prima di dire «non è arrivato»
 
   var q = new URLSearchParams(location.search);
-  var fonte = q.get('json') || FONTE;
+  var fonti = q.get('json') ? [q.get('json')] : FONTI;
   var stato = document.getElementById('stato');
   var aggiornata = document.getElementById('aggiornata');
 
@@ -557,12 +562,17 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
   }
 
   function carica() {
-    var sep = fonte.indexOf('?') >= 0 ? '&' : '?';
-    var url = fonte.indexOf('data:') === 0 ? fonte : fonte + sep + 'v=' + Math.floor(Date.now() / 60000);   // una lettura nuova al minuto
-    fetch(url, { cache: 'no-store' })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-      .then(mostra)
-      .catch(function (e) { mostraErroreRete(e && e.message ? e.message : ''); });
+    var i = 0, ultimoErrore = '';
+    (function prova() {
+      if (i >= fonti.length) { mostraErroreRete(ultimoErrore); return; }
+      var fonte = fonti[i++];
+      var sep = fonte.indexOf('?') >= 0 ? '&' : '?';
+      var url = fonte.indexOf('data:') === 0 ? fonte : fonte + sep + 'v=' + Math.floor(Date.now() / 60000);   // una lettura nuova al minuto
+      fetch(url, { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(mostra)
+        .catch(function (e) { ultimoErrore = e && e.message ? e.message : ''; prova(); });
+    })();
   }
 
   carica();
