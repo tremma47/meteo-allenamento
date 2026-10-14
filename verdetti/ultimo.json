@@ -156,7 +156,7 @@
    "conferma": 100,
    "coach": {
     "stato": "in_programma",
-    "letto": "09:49",
+    "letto": "09:51",
     "in_programma": [
      "Allenamento MiniFlag 18:30-20:00"
     ],
@@ -194,7 +194,7 @@
    "conferma": 100,
    "coach": {
     "stato": "in_programma",
-    "letto": "09:49",
+    "letto": "09:51",
     "in_programma": [
      "Allenamento Under 13 18:30-20:00",
      "Allenamento Under 15 18:30-20:00"
@@ -324,7 +324,7 @@
   }
  ],
  "calendario": {
-  "letto": "09:49",
+  "letto": "09:51",
   "scheda": "https://golee.it/clubs/sharks-football-asd",
   "errore": null,
   "allenamenti_oggi": [
