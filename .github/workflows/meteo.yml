@@ -1,0 +1,72 @@
+# Meteo allenamento — Sharks Palermo
+# Fa girare il motore meteo sui server di GitHub agli orari dei controlli e salva il
+# verdetto in verdetti/, da dove la pagina del sito lo legge.
+#
+# ORARI. GitHub ragiona in UTC e l'ora legale sposta l'Italia di un'ora:
+#   con l'ora legale (fino al 25/10/2026)  15:30 e 17:30 italiane = 13:30 e 15:30 UTC
+#   con l'ora solare (dal 25/10/2026)       15:30 e 17:30 italiane = 14:30 e 16:30 UTC
+# Quindi si parte a tutte e quattro le ore UTC, e fotografa.py guarda l'ora italiana:
+# lavora solo se è l'ora di uno dei controlli di config.toml, altrimenti esce subito.
+# Gli orari veri dei controlli stanno SOLO in config.toml ([controlli].orari): se
+# cambiano, va aggiunta qui l'ora UTC corrispondente (estate e inverno).
+# GitHub può far partire la corsa con qualche minuto di ritardo (è normale, soprattutto
+# allo scoccare dell'ora): per questo si parte alla mezz'ora, e la pagina mostra
+# sempre l'ora vera del verdetto.
+name: Meteo allenamento
+
+on:
+  schedule:
+    - cron: '30 13,14,15,16 * * *'
+  workflow_dispatch:
+    inputs:
+      forza:
+        description: 'Fai il controllo adesso, anche fuori orario'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: meteo
+  cancel-in-progress: false
+
+env:
+  TZ: Europe/Rome
+
+jobs:
+  controllo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Scarica il deposito
+        uses: actions/checkout@v7
+
+      - name: Python 3.13
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Pillow (serve per leggere le immagini del radar)
+        run: python -m pip install --quiet pillow
+
+      - name: Fotografa il verdetto
+        run: python fotografa.py ${{ (github.event_name == 'workflow_dispatch' && inputs.forza) && '--forza' || '' }}
+
+      - name: Salva il verdetto nel deposito
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add verdetti
+          if git diff --cached --quiet; then
+            echo "Nessun verdetto nuovo da salvare."
+            exit 0
+          fi
+          git commit -m "Verdetto meteo $(date '+%d/%m/%Y %H:%M')"
+          for tentativo in 1 2 3; do
+            git pull --rebase --quiet && git push && exit 0
+            echo "Push non riuscito (tentativo $tentativo), riprovo…"
+            sleep 10
+          done
+          exit 1

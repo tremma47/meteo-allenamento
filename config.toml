@@ -1,0 +1,143 @@
+# config.toml — L'UNICO posto dove stanno campo, gruppi, orari e soglie del
+# controllo meteo per gli allenamenti Sharks. Si modifica QUI, mai nel testo
+# della skill o dello script. Le righe che iniziano con # sono commenti.
+#
+# Dopo una modifica, prova subito:  python meteo_allenamento.py --gruppi tutti
+# (se c'è un errore di scrittura lo script lo dice alla prima riga).
+
+[campo]
+nome = "Campo sportivo Paolo Borsellino"
+indirizzo = "via Autonomia Siciliana 125, 90143 Palermo"
+# Punto usato per modelli e radar. Dal 13/10/2026: centro dell'impianto sportivo
+# registrato su OpenStreetMap (way 331442044) a 150 m da via D'Amelio, dove le
+# cronache collocano il Centro sportivo "Paolo Borsellino" (ex Fly Tennis).
+# Prima si usavano 38.1415, 13.3532 (la via): differenza 290 m, irrilevante per
+# modelli a 2 km e per il radar (1 pixel = 480 m).
+lat = 38.1434
+lon = 13.3508
+# Erba sintetica (Fabrizio, 13/10/2026): la pioggia caduta prima non rende il campo
+# impraticabile, quindi per i grandi conta solo il temporale, non i millimetri accumulati.
+fondo = "erba sintetica"
+# Zona di allerta della Protezione Civile in cui cade il campo. Verificata sul
+# bollettino del 12/10/2026 anche per coordinate. Se il nome cambiasse, lo script
+# cerca comunque la zona per coordinate e segnala il nome nuovo.
+zona_allerta = "Nord-Occidentale e isole Egadi e Ustica"
+
+# ---------------------------------------------------------------------------
+# GRUPPI. Per ciascuno: giorni (lun mar mer gio ven sab dom), orario, regola.
+#   regola = "piccoli"  -> si annulla con QUALSIASI allerta temporali, oppure se
+#                          almeno N modelli su 5 prevedono pioggia nella fascia
+#                          (N = modelli_pioggia_per_annullare, qui sotto).
+#                          Si decide presto, sulla previsione: i genitori vanno avvisati.
+#   regola = "grandi"   -> si annulla solo con allerta ARANCIONE o ROSSA, o con
+#                          fulmini in zona. Con pioggia senza temporali ci si allena.
+#                          Si decide un'ora prima, sul radar.
+# Facoltativi: dal = 2026-11-01 / al = 2027-06-30 (periodo di attività del gruppo),
+#              decisione_entro = "14:30" (solo promemoria nel testo).
+# ---------------------------------------------------------------------------
+
+[[gruppi]]
+nome = "Mini Flag + Under 10"
+regola = "piccoli"
+giorni = ["lun", "mer"]
+inizio = "18:30"
+fine = "20:00"
+decisione_entro = "15:30"
+# orari: Fabrizio, 13/10/2026 (confermati anche nel Vademecum 2026/27).
+# decisione alle 15:30 e non alle 14:30: deciso da Fabrizio il 13/10/2026, perché il
+# bollettino del giorno esce in media alle 14:34 e alle 15:30 c'è nel 90% dei casi.
+
+[[gruppi]]
+nome = "Under 13 + Under 15"
+regola = "grandi"
+giorni = ["lun", "mer"]
+inizio = "18:30"
+fine = "20:00"
+# fonte: Vademecum 2026/27, confermato da Fabrizio il 13/10/2026
+
+[[gruppi]]
+nome = "Ragazze (Senior F)"
+regola = "grandi"
+giorni = ["lun"]
+inizio = "20:00"
+fine = "22:00"
+# fonte: Fabrizio, 13/10/2026
+
+[[gruppi]]
+nome = "Senior M"
+regola = "grandi"
+giorni = ["lun", "mer"]
+inizio = "20:30"
+fine = "22:00"
+dal = 2026-11-01
+# fonte: Vademecum 2026/27 (senior da novembre), confermato da Fabrizio il 13/10/2026
+
+# ---------------------------------------------------------------------------
+# CONTROLLI. A che ora il verdetto va prodotto (e, in futuro, mandato su Telegram).
+# Deciso da Fabrizio il 13/10/2026: il verdetto per TUTTI i gruppi alle 15:30 (a
+# quell'ora il bollettino DPC del giorno c'è nel 90% dei casi), poi un aggiornamento
+# alle 17:30, un'ora prima dei primi allenamenti, con il radar.
+# Lo script li usa per scrivere «prossimo controllo alle …»; l'avvio automatico li
+# leggerà da qui.
+# ---------------------------------------------------------------------------
+[controlli]
+orari = ["15:30", "17:30"]
+
+# ---------------------------------------------------------------------------
+# SOGLIE. Sono i numeri che reggono la regola. Decide Fabrizio; qui i valori di
+# partenza proposti il 13/10/2026 (quelli marcati "indicativa" vanno tarati con
+# l'esperienza: ogni esito resta in esiti/ e i riscontri reali in riscontri.md).
+# ---------------------------------------------------------------------------
+[soglie]
+# Un modello "prevede pioggia" se nella fascia dell'allenamento somma almeno
+# questi millimetri. 0,5 mm in 90 minuti è una pioggia che si sente; sotto è
+# rumore numerico dei modelli (0,1 mm) o pioviggine. Approvato da Fabrizio il 13/10/2026.
+pioggia_mm_modello = 0.5
+# Piccoli: si annulla se almeno questi modelli (su 5) prevedono pioggia.
+modelli_pioggia_per_annullare = 3
+# Se rispondono meno modelli di così, la regola "3 su 5" non si applica e il
+# verdetto è NON PREVEDIBILE (dati insufficienti), mai un via libera.
+modelli_minimi = 3
+# PICCOLI E ARIA INSTABILE — deciso da Fabrizio il 13/10/2026: resta "false", si rivaluta
+# dopo qualche settimana di esiti/ e riscontri.md (la soglia CAPE è indicativa e in autunno
+# l'aria instabile è frequente anche nei giorni asciutti: troppi annullamenti a vuoto).
+#   false = regola approvata il 13/10: senza allerta temporali e con meno di 3 modelli
+#           piovosi i piccoli SI FANNO, con un avviso in testa se l'aria è instabile.
+#   true  = i segnali di temporale (CAPE alto, temporali previsti, potenziale fulmini,
+#           ICON-2I che cambia idea) fanno ANNULLARE i piccoli per tempo.
+# Il caso che ha fatto nascere la domanda: il 12/10/2026 alle 14:00 il bollettino
+# del giorno (allerta gialla) non era ancora uscito (è arrivato alle 14:43), quello
+# del giorno prima non dava allerta, e la regola con "false" avrebbe detto SI FA
+# ai piccoli con CAPE 1570. Fabrizio e coach Daniele li avevano annullati: giusto.
+piccoli_annullano_con_segnali = false
+# Segnali di temporale (rendono NON PREVEDIBILE il verdetto dei grandi e mettono
+# in guardia sui piccoli). Indicativi, da tarare:
+cape_instabile = 400          # J/kg, energia disponibile per i temporali
+lpi_fulmini = 2.0             # potenziale fulmini di ICON-2I (lightning_potential)
+cambio_idea_mm = 1.0          # ICON-2I ha cambiato di tanto la pioggia rispetto a ieri: incertezza alta (solo nota)
+# Radar: conta davvero solo poco prima dell'allenamento. 180 minuti perché
+# l'aggiornamento delle 17:30 deve valere anche per ragazze (20:00) e senior (20:30).
+radar_minuti_prima = 180      # da quanti minuti prima dell'inizio il radar "vale"
+radar_raggio_vicino_km = 25   # pioggia entro questo raggio = "vicina"
+radar_crescita_x = 2.0        # area di pioggia entro 100 km cresciuta di tanto in un'ora = celle in formazione
+
+# ---------------------------------------------------------------------------
+# FONTI (tutte gratuite, senza chiave). Non toccare se non si sa cosa si fa.
+# ---------------------------------------------------------------------------
+[fonti]
+open_meteo = "https://api.open-meteo.com/v1/forecast"
+previous_runs = "https://previous-runs-api.open-meteo.com/v1/forecast"
+# Modello di riferimento (il più dettagliato, 2 km): per il confronto con la corsa di ieri e il potenziale fulmini.
+modello_riferimento = "italia_meteo_arpae_icon_2i"
+modelli = [
+  { id = "italia_meteo_arpae_icon_2i", nome = "ICON-2I" },
+  { id = "icon_eu",                    nome = "ICON-EU" },
+  { id = "ecmwf_ifs025",               nome = "ECMWF" },
+  { id = "gfs_seamless",               nome = "GFS" },
+  { id = "ukmo_seamless",              nome = "UKMO" },
+]
+rainviewer = "https://api.rainviewer.com/public/weather-maps.json"
+dpc_repo = "pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica"
+# Pagine per il controllo a mano (nel testo del verdetto)
+bollettino_pagina = "https://mappe.protezionecivile.gov.it/it/mappe-rischi/bollettino-di-criticita/"
+fulmini_mappa = "https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;"

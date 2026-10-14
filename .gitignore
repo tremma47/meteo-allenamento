@@ -1,0 +1,10 @@
+# Prodotti di ogni esecuzione locale: restano sul PC, non nel deposito
+cache/
+esiti/
+ultimo_esito.txt
+__pycache__/
+*.pyc
+
+# Note interne del progetto (dossier e riscontri sul campo): restano sul PC
+CONTESTO.md
+riscontri.md
