@@ -33,7 +33,11 @@ zona_allerta = "Nord-Occidentale e isole Egadi e Ustica"
 #                          fulmini in zona. Con pioggia senza temporali ci si allena.
 #                          Si decide un'ora prima, sul radar.
 # Facoltativi: dal = 2026-11-01 / al = 2027-06-30 (periodo di attività del gruppo),
-#              decisione_entro = "14:30" (solo promemoria nel testo).
+#              decisione_entro = "14:30" (solo promemoria nel testo),
+#              golee = ["MiniFlag", "Under 10"]: come si chiamano gli allenamenti di questo
+#              gruppo nel calendario pubblico Golee (sezione [calendario] in fondo), senza la
+#              parola "Allenamento". Serve a fotografa.py e alla pagina del sito: se un
+#              allenamento previsto qui manca in Golee, i coach lo hanno annullato.
 # ---------------------------------------------------------------------------
 
 [[gruppi]]
@@ -43,6 +47,7 @@ giorni = ["lun", "mer"]
 inizio = "18:30"
 fine = "20:00"
 decisione_entro = "15:30"
+golee = ["MiniFlag", "Under 10"]
 # orari: Fabrizio, 13/10/2026 (confermati anche nel Vademecum 2026/27).
 # decisione alle 15:30 e non alle 14:30: deciso da Fabrizio il 13/10/2026, perché il
 # bollettino del giorno esce in media alle 14:34 e alle 15:30 c'è nel 90% dei casi.
@@ -53,6 +58,7 @@ regola = "grandi"
 giorni = ["lun", "mer"]
 inizio = "18:30"
 fine = "20:00"
+golee = ["Under 13", "Under 15"]
 # fonte: Vademecum 2026/27, confermato da Fabrizio il 13/10/2026
 
 [[gruppi]]
@@ -61,7 +67,9 @@ regola = "grandi"
 giorni = ["lun"]
 inizio = "20:00"
 fine = "22:00"
-# fonte: Fabrizio, 13/10/2026
+golee = ["Senior F", "Ragazze", "Femminile"]
+# fonte: Fabrizio, 13/10/2026. Al 14/10/2026 Golee non ha allenamenti per questo gruppo:
+# finché non ci sono, la pagina non dice niente del calendario per le ragazze.
 
 [[gruppi]]
 nome = "Senior M"
@@ -70,6 +78,7 @@ giorni = ["lun", "mer"]
 inizio = "20:30"
 fine = "22:00"
 dal = 2026-11-01
+golee = ["Senior M", "Maschile"]
 # fonte: Vademecum 2026/27 (senior da novembre), confermato da Fabrizio il 13/10/2026
 
 # ---------------------------------------------------------------------------
@@ -141,3 +150,19 @@ dpc_repo = "pcm-dpc/DPC-Bollettini-Criticita-Idrogeologica-Idraulica"
 # Pagine per il controllo a mano (nel testo del verdetto)
 bollettino_pagina = "https://mappe.protezionecivile.gov.it/it/mappe-rischi/bollettino-di-criticita/"
 fulmini_mappa = "https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;"
+
+# ---------------------------------------------------------------------------
+# CALENDARIO UFFICIALE: la scheda pubblica di Golee (richiesta di Fabrizio del 14/10/2026).
+# Nessuna chiave. Regola verificata il 14/10/2026: un allenamento che i coach ANNULLANO in
+# Golee SPARISCE dal calendario pubblico (lunedì 12/10 il Mini Flag annullato non c'era,
+# mercoledì 14/10 c'è). Quindi: gruppo "tracciato" = ha almeno un allenamento in calendario
+# nei prossimi giorni_avanti giorni; se è tracciato e oggi manca, è annullato dai coach.
+# L'API accetta al massimo 7 giorni per chiamata (fotografa.py ne fa due).
+# L'id dell'organizzazione è quello della scheda pubblica (props dell'isola "OrgCalendarSection").
+# ---------------------------------------------------------------------------
+[calendario]
+scheda = "https://golee.it/clubs/sharks-football-asd"
+golee_api = "https://api.golee.it/calendar/public/organizations/{org}/calendars/common/events"
+golee_organizzazione = "664772772dc8d2c457668f8e"
+tipo = "Allenamento"
+giorni_avanti = 14

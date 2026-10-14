@@ -1,26 +1,27 @@
 # Meteo allenamento — Sharks Palermo
-# Fa girare il motore meteo sui server di GitHub agli orari dei controlli e salva il
-# verdetto in verdetti/, da dove la pagina del sito lo legge.
+# Fa girare il motore meteo sui server di GitHub agli orari dei controlli, rilegge il
+# calendario Golee ogni 10 minuti nel pomeriggio e salva tutto in verdetti/, da dove la
+# pagina del sito lo legge.
 #
 # ORARI. GitHub ragiona in UTC e l'ora legale sposta l'Italia di un'ora:
-#   con l'ora legale (fino al 25/10/2026)  15:30 e 17:30 italiane = 13:30 e 15:30 UTC
-#   con l'ora solare (dal 25/10/2026)       15:30 e 17:30 italiane = 14:30 e 16:30 UTC
-# Quindi si parte a tutte e quattro le ore UTC, e fotografa.py guarda l'ora italiana:
-# lavora solo se è l'ora di uno dei controlli di config.toml, altrimenti esce subito.
-# Gli orari veri dei controlli stanno SOLO in config.toml ([controlli].orari): se
-# cambiano, va aggiunta qui l'ora UTC corrispondente (estate e inverno).
-# GitHub può far partire la corsa con qualche minuto di ritardo (è normale, soprattutto
-# allo scoccare dell'ora): per questo si parte alla mezz'ora, e la pagina mostra
-# sempre l'ora vera del verdetto.
+#   con l'ora legale (fino al 25/10/2026)  13:00-19:59 UTC = 15:00-21:59 italiane
+#   con l'ora solare (dal 25/10/2026)       13:00-19:59 UTC = 14:00-20:59 italiane
+# Si parte ogni 10 minuti in quella fascia e fotografa.py, guardando l'ora italiana,
+# decide da solo: controllo completo (motore + calendario) alla prima corsa dopo ciascun
+# orario di [controlli] in config.toml; solo rilettura del calendario Golee nelle altre;
+# niente nei giorni senza allenamento. Gli orari veri dei controlli stanno SOLO in
+# config.toml: questa fascia UTC deve solo contenerli (estate e inverno).
+# GitHub può far partire una corsa con qualche minuto di ritardo (è normale): per questo
+# la pagina mostra sempre l'ora vera del verdetto.
 name: Meteo allenamento
 
 on:
   schedule:
-    - cron: '30 13,14,15,16 * * *'
+    - cron: '*/10 13-19 * * *'
   workflow_dispatch:
     inputs:
       forza:
-        description: 'Fai il controllo adesso, anche fuori orario'
+        description: 'Controllo completo adesso, anche fuori orario (spento = decide da solo come una corsa normale)'
         type: boolean
         default: true
 
@@ -50,17 +51,17 @@ jobs:
       - name: Pillow (serve per leggere le immagini del radar)
         run: python -m pip install --quiet pillow
 
-      - name: Fotografa il verdetto
+      - name: Fotografa il verdetto / rileggi il calendario
         run: python fotografa.py ${{ (github.event_name == 'workflow_dispatch' && inputs.forza) && '--forza' || '' }}
 
-      - name: Salva il verdetto nel deposito
+      - name: Salva nel deposito
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add verdetti
           if git diff --cached --quiet; then
-            echo "Nessun verdetto nuovo da salvare."
+            echo "Niente di nuovo da salvare."
             exit 0
           fi
           git commit -m "Verdetto meteo $(date '+%d/%m/%Y %H:%M')"
