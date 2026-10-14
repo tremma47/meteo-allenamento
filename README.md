@@ -15,13 +15,18 @@ dal campo, qualunque sia il verdetto.
 - `meteo_allenamento.py` — il motore, unico: legge le fonti e applica la regola.
 - `config.toml` — campo, gruppi, orari, soglie: **l'unico posto** dove si cambiano.
 - `fotografa.py` — agli orari dei controlli lancia il motore e salva il verdetto in
-  `verdetti/` (`ultimo.json` per la pagina, `ultimo.txt` per leggerlo da qui, più la storia).
-- `.github/workflows/meteo.yml` — lo fa girare sui server di GitHub ogni giorno alle
-  15:30 e alle 17:30 italiane, senza bisogno di un PC acceso.
+  `verdetti/` (`ultimo.json` per la pagina, `ultimo.txt` per leggerlo da qui, più la storia);
+  ogni 10 minuti nel pomeriggio rilegge il calendario ufficiale dell'associazione (la scheda
+  pubblica su Golee): un allenamento che i coach annullano sparisce dal calendario, e la
+  pagina lo dice.
+- `.github/workflows/meteo.yml` — lo fa girare sui server di GitHub ogni giorno nel
+  pomeriggio (controlli alle 15:30 e alle 17:30 italiane), senza bisogno di un PC acceso.
 - `pagina/index.html` — la pagina del sito, che legge `verdetti/ultimo.json`.
 - `pubblica_pagina.sh` — carica la pagina sul sito (una tantum, a mano).
 - `Meteo-Allenamento.bat` — sul PC: doppio click per il controllo di adesso.
 
-Verdetti possibili per gruppo: **SI FA · ANNULLATO · NON PREVEDIBILE**. «Non
-prevedibile» è il verdetto onesto dei giorni di temporali (le celle nascono sul posto)
-e dei giorni in cui una fonte manca: non diventa mai un via libera.
+Verdetti possibili per gruppo: **SI FA · ANNULLATO · NON PREVEDIBILE** (sulla pagina:
+allenamento confermato / annullato / da confermare). «Non prevedibile» è il verdetto onesto
+dei giorni di temporali (le celle nascono sul posto) e dei giorni in cui una fonte manca:
+non diventa mai un via libera. Se i coach tolgono l'allenamento dal calendario, la pagina
+mostra «annullato dai coach» qualunque sia il meteo.
