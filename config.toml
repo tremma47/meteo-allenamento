@@ -62,16 +62,17 @@ golee = ["Under 13", "Under 15"]
 # fonte: Vademecum 2026/27, confermato da Fabrizio il 13/10/2026
 
 [[gruppi]]
-nome = "Ragazze (Senior F)"
+nome = "Senior Femminile"
 regola = "grandi"
-giorni = ["lun"]
-inizio = "20:00"
+giorni = ["lun", "mer"]
+inizio = "20:30"
 fine = "22:00"
 golee = ["Senior Femminile"]
-# fonte: Fabrizio, 13/10/2026. In Golee l'allenamento si chiama "Allenamento Senior Femminile"
-# (Fabrizio, 14/10/2026), ma al 14/10/2026 nel calendario pubblico non ce n'è nessuno da
-# settembre a novembre: finché non vengono creati, la pagina non dice niente del calendario
-# per le ragazze (gruppo "non tracciato"), e il verdetto resta quello del meteo.
+# fonte: calendario ufficiale Golee reso pubblico da Fabrizio il 14/10/2026 ("Allenamento
+# Senior Femminile", lun e mer 20:30-22:00, come il Vademecum 2026/27). Il 13/10 era stato
+# detto "solo lunedì 20:00-22:00": vale Golee. ATTENZIONE: dal 26/10/2026 Golee mostra questo
+# allenamento alle 19:30-21:00 (serie creata con l'ora fissa rispetto al fuso: slitta con la
+# fine dell'ora legale), da verificare e correggere in Golee; qui resta 20:30.
 
 [[gruppi]]
 nome = "Senior M"
