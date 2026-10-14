@@ -10,6 +10,8 @@ questo script guarda l'ORA ITALIANA e decide da solo:
   - se è l'ora di uno dei controlli di config.toml ([controlli].orari) e quel controllo
     non è ancora stato fatto oggi → CONTROLLO COMPLETO: lancia il motore, legge il
     calendario, salva tutto;
+  - se è l'ora del verdetto ORIENTATIVO ([controlli].orientativo, la sera prima) e domani
+    c'è almeno un gruppo → motore con --data domani, salvato come previsione;
   - altrimenti, se oggi c'è già un verdetto con dei gruppi → AGGIORNAMENTO CALENDARIO:
     rilegge solo Golee e, se qualcosa è cambiato (un allenamento sparito = annullato dai
     coach), aggiorna ultimo.json. Il verdetto meteo NON viene ricalcolato;
@@ -84,11 +86,15 @@ def in_ora_italiana(iso):
         return d.astimezone()  # ora locale del sistema (Europe/Rome sul PC e su GitHub)
 
 
+def in_finestra(orario, adesso):
+    m = adesso.hour * 60 + adesso.minute
+    return motore.minuti(orario) <= m < motore.minuti(orario) + DOPO_MIN
+
+
 def controllo_in_corso(orari, adesso):
     """L'ora pianificata del controllo a cui questa corsa corrisponde, o None."""
-    m = adesso.hour * 60 + adesso.minute
     for o in orari:
-        if motore.minuti(o) <= m < motore.minuti(o) + DOPO_MIN:
+        if in_finestra(o, adesso):
             return o
     return None
 
@@ -206,10 +212,11 @@ def riga_calendario(foto):
 
 
 # ----------------------------------------------------------------------------- motore e file
-def lancia_motore():
-    """Lancia meteo_allenamento.py --json e restituisce il suo JSON (l'ultimo blocco
-    stampato). Il motore salva comunque il suo esito in esiti/, come sempre."""
-    cmd = [sys.executable, str(QUI / "meteo_allenamento.py"), "--json"]
+def lancia_motore(argomenti=()):
+    """Lancia meteo_allenamento.py --json (più gli argomenti dati, es. --data per domani) e
+    restituisce il suo JSON (l'ultimo blocco stampato). Il motore salva comunque il suo
+    esito in esiti/, come sempre."""
+    cmd = [sys.executable, str(QUI / "meteo_allenamento.py"), "--json", *argomenti]
     p = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=str(QUI))
     if p.returncode != 0:
         raise RuntimeError(f"il motore è uscito con codice {p.returncode}: {(p.stderr or p.stdout).strip()[-600:]}")
@@ -262,8 +269,50 @@ def salva_errore(foto, nome_storia):
 
 
 # ----------------------------------------------------------------------------- main
+def controllo_orientativo(cfg, orari, adesso, ora_pianificata, prova):
+    """La sera prima, il verdetto ORIENTATIVO per domani ([controlli].orientativo): motore con
+    --data domani (bollettino parte «domani», modelli; niente radar) più il calendario Golee di
+    domani. Sostituisce ultimo.json solo se riesce: se il motore fallisce resta il verdetto di
+    oggi, che vale di più di una previsione mancata."""
+    domani = adesso.date() + dt.timedelta(days=1)
+    if not motore.gruppi_del_giorno(cfg, domani):
+        print(f"Domani ({motore.GIORNI_LUNGHI[domani.weekday()]}) nessun gruppo si allena: niente verdetto orientativo.")
+        return 0
+    nome_storia = f"{domani.isoformat()}_orientativo.json"
+    if (VERDETTI / nome_storia).exists():
+        print(f"Il verdetto orientativo per domani è già stato fatto ({nome_storia}).")
+        return 0
+    if prova:
+        print(f"PROVA: farei adesso il verdetto orientativo per domani {domani:%d/%m} e lo salverei come verdetti/{nome_storia}.")
+        return 0
+    foto = {"versione": 2, "tipo": "orientativo", "pianificato": ora_pianificata,
+            "fotografato": adesso.strftime("%Y-%m-%d %H:%M"),
+            "eseguito_da": "github-actions" if os.environ.get("GITHUB_ACTIONS") else "pc",
+            "controlli": orari, "data": domani.isoformat()}
+    print(f"Lancio il motore per il verdetto orientativo di domani {domani:%d/%m}…")
+    try:
+        risultato = lancia_motore(["--data", domani.isoformat()])
+    except Exception as e:
+        foto["errore"] = str(e)
+        VERDETTI.mkdir(exist_ok=True)
+        scrivi_json(VERDETTI / nome_storia, foto)
+        print(f"ERRORE: {e}\nultimo.json non toccato (resta il verdetto di oggi); errore salvato in verdetti/{nome_storia}.")
+        return 1
+    foto.update(risultato)
+    foto["prossimo_controllo"] = orari[0] if orari else None
+    foto["prossimi_allenamenti"] = prossimi_allenamenti(cfg, domani)
+    cal = leggi_calendario(cfg, domani, adesso)
+    applica_calendario(foto, cal, cfg)
+    salva(foto, nome_storia)
+    riassunto = " · ".join(f"{v['gruppo']}: {v['esito']}" + (f" {v['conferma']}%" if v.get("conferma") is not None else "")
+                           for v in foto.get("verdetti", []))
+    print(f"Verdetto orientativo per domani fotografato alle {adesso:%H:%M} → {riassunto}")
+    print(f"Salvato: verdetti/ultimo.json, verdetti/ultimo.txt, verdetti/{nome_storia}")
+    return 0
+
+
 def controllo_completo(cfg, orari, adesso, pianificato, nome_storia, etichetta):
-    foto = {"versione": 2, "pianificato": pianificato or "manuale",
+    foto = {"versione": 2, "tipo": "verdetto", "pianificato": pianificato or "manuale",
             "fotografato": adesso.strftime("%Y-%m-%d %H:%M"),
             "eseguito_da": "github-actions" if os.environ.get("GITHUB_ACTIONS") else "pc",
             "controlli": orari, "data": adesso.date().isoformat()}
@@ -339,9 +388,12 @@ def main():
         return 2
 
     pianificato = controllo_in_corso(orari, adesso)
+    orientativo = cfg.get("controlli", {}).get("orientativo")
     if a.forza:
         etichetta, nome_storia = "manuale", f"{adesso:%Y-%m-%d_%H%M}_manuale.json"
         pianificato = None
+    elif pianificato is None and orientativo and in_finestra(orientativo, adesso):
+        return controllo_orientativo(cfg, orari, adesso, orientativo, a.prova)
     elif pianificato is None:
         return aggiornamento_calendario(cfg, adesso, a.prova)
     else:

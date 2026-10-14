@@ -96,6 +96,12 @@ golee = ["Senior Maschile"]
 # ---------------------------------------------------------------------------
 [controlli]
 orari = ["15:30", "17:30"]
+# Verdetto ORIENTATIVO per l'indomani, la sera prima (Fabrizio, 14/10/2026): a quest'ora il
+# bollettino DPC che copre domani è uscito da ore e i modelli coprono la serata successiva;
+# manca solo il radar, che esiste solo per il giorno stesso. Lo fa fotografa.py (su GitHub)
+# solo se domani c'è almeno un gruppo; la pagina lo mostra come «previsione», e il verdetto
+# vero delle 15:30 lo sostituisce. Togliere la riga per spegnerlo.
+orientativo = "23:00"
 
 # ---------------------------------------------------------------------------
 # SOGLIE. Sono i numeri che reggono la regola. Decide Fabrizio; qui i valori di

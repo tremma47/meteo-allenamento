@@ -11,6 +11,8 @@
 # orario di [controlli] in config.toml; solo rilettura del calendario Golee nelle altre;
 # niente nei giorni senza allenamento. Gli orari veri dei controlli stanno SOLO in
 # config.toml: questa fascia UTC deve solo contenerli (estate e inverno).
+# La seconda fascia (21:00-22:59 UTC = 23:00-00:59 con l'ora legale, 22:00-23:59 senza)
+# serve al verdetto ORIENTATIVO delle 23:00 per l'indomani ([controlli].orientativo).
 # GitHub può far partire una corsa con qualche minuto di ritardo (è normale): per questo
 # la pagina mostra sempre l'ora vera del verdetto.
 name: Meteo allenamento
@@ -18,6 +20,7 @@ name: Meteo allenamento
 on:
   schedule:
     - cron: '*/10 13-19 * * *'
+    - cron: '*/10 21-22 * * *'
   workflow_dispatch:
     inputs:
       forza:

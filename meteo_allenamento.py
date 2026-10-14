@@ -144,7 +144,8 @@ def gruppi_del_giorno(cfg, data, tutti=False):
 
 
 # ----------------------------------------------------------------------------- modelli
-VARIABILI = ("precipitation", "weather_code", "cape", "lightning_potential", "wind_gusts_10m", "temperature_2m")
+VARIABILI = ("precipitation", "weather_code", "cape", "lightning_potential", "wind_gusts_10m", "temperature_2m",
+             "precipitation_probability")
 
 
 def previsioni(cfg, data):
@@ -561,13 +562,37 @@ def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
     temperatura, abbigliamento = consiglio_abbigliamento(cfg, mod, ore, piovosi)
     if abbigliamento and esito != "ANNULLATO":
         righe.append(f"Abbigliamento: {abbigliamento} ({temperatura:.0f} °C previsti).")
+    prob, n_prob = probabilita_pioggia(mod, ore)
+    conferma = None if prob is None else (0 if esito == "ANNULLATO" else 100 - prob)
+    if prob is not None:
+        righe.append(f"Probabilità di pioggia nella fascia {prob}% (scenari di {n_modelli(n_prob)}): conferma {conferma}%.")
     mm_riga = " · ".join(f"{m['nome']} {it_mm(mm.get(m['nome']))}" for m in cfg["fonti"]["modelli"])
     righe.append(f"mm previsti {ore[0][:2]}-{ore[-1][:2]}: {mm_riga}")
     if cambio and abs(cambio[0] - cambio[1]) < s["cambio_idea_mm"] and (cambio[0] or cambio[1]):
         righe.append(f"ICON-2I ieri per questa fascia dava {it_mm(cambio[1])} mm, oggi {it_mm(cambio[0])}.")
     return {"gruppo": g["nome"], "fascia": f"{g['inizio']}-{g['fine']}", "regola": g["regola"], "esito": esito,
             "titolo": titolo, "motivi": righe, "mm_per_modello": mm, "modelli_piovosi": piovosi, "segnali": segnali,
-            "icon2i_oggi_ieri_mm": cambio, "temperatura": temperatura, "abbigliamento": abbigliamento}
+            "icon2i_oggi_ieri_mm": cambio, "temperatura": temperatura, "abbigliamento": abbigliamento,
+            "probabilita_pioggia": prob, "conferma": conferma}
+
+
+def probabilita_pioggia(mod, ore):
+    """Probabilità di pioggia (più di 0,1 mm in un'ora) nella fascia, per la «percentuale di
+    conferma» chiesta da Fabrizio il 14/10/2026. Non è un'opinione: Open-Meteo la calcola
+    sugli scenari (ensemble, ~30 corse) dei modelli che la forniscono — ICON-EU, ECMWF, GFS,
+    UKMO; ICON-2I no. Per ogni modello si prende il massimo sulle ore della fascia, poi la
+    media fra i modelli. Torna (percentuale intera, quanti modelli) oppure (None, 0).
+    La conferma è 100 meno questa probabilità (0 se il verdetto è ANNULLATO): misura la
+    pioggia, non i temporali, e in un giorno «non prevedibile» va letta insieme al verdetto."""
+    valori = []
+    for m in mod.values():
+        p = [m["ore"].get(o, {}).get("precipitation_probability") for o in ore]
+        p = [v for v in p if v is not None]
+        if p:
+            valori.append(max(p))
+    if not valori:
+        return None, 0
+    return round(sum(valori) / len(valori)), len(valori)
 
 
 def consiglio_abbigliamento(cfg, mod, ore, piovosi):

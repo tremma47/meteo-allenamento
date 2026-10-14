@@ -1,0 +1,352 @@
+{
+ "versione": 2,
+ "tipo": "verdetto",
+ "pianificato": "manuale",
+ "fotografato": "2026-10-14 09:49",
+ "eseguito_da": "pc",
+ "controlli": [
+  "15:30",
+  "17:30"
+ ],
+ "data": "2026-10-14",
+ "controllo": "2026-10-14 09:49",
+ "campo": "Campo sportivo Paolo Borsellino",
+ "bollettino": {
+  "nome": "20261013_1408",
+  "emesso": "2026-10-13 14:08",
+  "parte": "tomorrow",
+  "zona": "Nord-Occidentale e isole Egadi e Ustica",
+  "livelli": {
+   "temporali": "NESSUNA",
+   "idrogeologico": "NESSUNA",
+   "idraulico": "NESSUNA"
+  },
+  "testo": {
+   "temporali": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA",
+   "idrogeologico": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA",
+   "idraulico": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA"
+  },
+  "avviso": null
+ },
+ "bollettino_errore": null,
+ "modelli_ok": [
+  "ECMWF",
+  "GFS",
+  "ICON-2I",
+  "ICON-EU",
+  "UKMO"
+ ],
+ "modelli_errore": {},
+ "radar": {
+  "fotogrammi": [
+   {
+    "ora": "08:40",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "08:50",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "09:00",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "09:10",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "09:20",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "09:30",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "09:40",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   }
+  ],
+  "tessere_mancanti": 0,
+  "km_per_pixel": 0.48,
+  "aggiornato": "09:40",
+  "ritardo_min": 9
+ },
+ "radar_errore": null,
+ "verdetti": [
+  {
+   "gruppo": "Mini Flag + Under 10",
+   "fascia": "18:30-20:00",
+   "regola": "piccoli",
+   "esito": "SI FA",
+   "titolo": "",
+   "motivi": [
+    "Nessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).",
+    "Decisione da comunicare entro le 15:30.",
+    "Abbigliamento: maglietta (20 °C previsti).",
+    "Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.",
+    "mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0"
+   ],
+   "mm_per_modello": {
+    "ICON-2I": 0.0,
+    "ICON-EU": 0.0,
+    "ECMWF": 0.0,
+    "GFS": 0.0,
+    "UKMO": 0.0
+   },
+   "modelli_piovosi": [],
+   "segnali": [],
+   "icon2i_oggi_ieri_mm": [
+    0,
+    0
+   ],
+   "temperatura": 20.32,
+   "abbigliamento": "maglietta",
+   "probabilita_pioggia": 0,
+   "conferma": 100,
+   "coach": {
+    "stato": "in_programma",
+    "letto": "09:49",
+    "in_programma": [
+     "Allenamento MiniFlag 18:30-20:00"
+    ],
+    "annullati": []
+   }
+  },
+  {
+   "gruppo": "Under 13 + Under 15",
+   "fascia": "18:30-20:00",
+   "regola": "grandi",
+   "esito": "SI FA",
+   "titolo": "",
+   "motivi": [
+    "Nessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.",
+    "Abbigliamento: maglietta (20 °C previsti).",
+    "Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.",
+    "mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0"
+   ],
+   "mm_per_modello": {
+    "ICON-2I": 0.0,
+    "ICON-EU": 0.0,
+    "ECMWF": 0.0,
+    "GFS": 0.0,
+    "UKMO": 0.0
+   },
+   "modelli_piovosi": [],
+   "segnali": [],
+   "icon2i_oggi_ieri_mm": [
+    0,
+    0
+   ],
+   "temperatura": 20.32,
+   "abbigliamento": "maglietta",
+   "probabilita_pioggia": 0,
+   "conferma": 100,
+   "coach": {
+    "stato": "in_programma",
+    "letto": "09:49",
+    "in_programma": [
+     "Allenamento Under 13 18:30-20:00",
+     "Allenamento Under 15 18:30-20:00"
+    ],
+    "annullati": []
+   }
+  }
+ ],
+ "testo": "METEO ALLENAMENTO · mercoledì 14/10/2026 · controllo delle 09:49\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nALLERTA per il 14/10 (bollettino DPC del 13/10 14:08, parte «domani»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> SI FA\nNessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).\nDecisione da comunicare entro le 15:30.\nAbbigliamento: maglietta (20 °C previsti).\nProbabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> SI FA\nNessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.\nAbbigliamento: maglietta (20 °C previsti).\nProbabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nRADAR 08:40→09:40: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar ok\nProssimo controllo previsto alle 15:30.",
+ "prossimo_controllo": "15:30",
+ "prossimi_allenamenti": [
+  {
+   "data": "2026-10-14",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-19",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Ragazze (Senior F)",
+     "inizio": "20:00",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-21",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-26",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Ragazze (Senior F)",
+     "inizio": "20:00",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-28",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-11-02",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Ragazze (Senior F)",
+     "inizio": "20:00",
+     "fine": "22:00"
+    },
+    {
+     "nome": "Senior M",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  }
+ ],
+ "calendario": {
+  "letto": "09:49",
+  "scheda": "https://golee.it/clubs/sharks-football-asd",
+  "errore": null,
+  "allenamenti_oggi": [
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento MiniFlag"
+   },
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento Under 13"
+   },
+   {
+    "data": "2026-10-14",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento Under 15"
+   }
+  ],
+  "allenamenti_in_calendario": 15
+ }
+}
