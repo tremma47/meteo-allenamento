@@ -28,4 +28,4 @@ RADAR 16:30→17:40: nessuna pioggia entro 100 km dal campo. [1 tessere non scar
 FULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;
   Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.
 FONTI: bollettino ok · modelli 5/5 · radar ok
-CALENDARIO GOLEE alle 19:41: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
+CALENDARIO GOLEE alle 22:58: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
