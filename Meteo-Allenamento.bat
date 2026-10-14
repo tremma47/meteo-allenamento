@@ -6,7 +6,7 @@ REM  Si possono aggiungere opzioni, es.:  Meteo-Allenamento.bat --gruppi tutti
 REM ============================================================
 chcp 65001 >nul
 cd /d "%~dp0"
-set PY=C:\Users\fabri\AppData\Local\Programs\Python\Python313\python.exe
+set PY=%LOCALAPPDATA%\Programs\Python\Python313\python.exe
 if not exist "%PY%" set PY=python
 "%PY%" "%~dp0meteo_allenamento.py" %*
 echo.
