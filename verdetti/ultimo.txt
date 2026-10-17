@@ -1,31 +1,11 @@
-METEO ALLENAMENTO · mercoledì 14/10/2026 · controllo delle 17:49
+METEO ALLENAMENTO · sabato 17/10/2026 · controllo delle 18:02
 Campo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica
-ALLERTA per il 14/10 (bollettino DPC del 14/10 13:44, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA
+ALLERTA per il 17/10 (bollettino DPC del 17/10 14:58, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA
 
-MINI FLAG + UNDER 10 · 18:30-20:00
->> SI FA
-Nessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).
-Decisione da comunicare entro le 15:30.
-Abbigliamento: maglietta (20 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
+Oggi (sabato) nessun gruppo si allena. Per vedere comunque i verdetti: --gruppi tutti
 
-UNDER 13 + UNDER 15 · 18:30-20:00
->> SI FA
-Nessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.
-Abbigliamento: maglietta (20 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
-
-SENIOR FEMMINILE · 20:30-22:00
->> SI FA
-Nessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.
-Abbigliamento: maglietta (20 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
-
-RADAR 16:30→17:40: nessuna pioggia entro 100 km dal campo. [1 tessere non scaricate] Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
+RADAR 17:00→18:00: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
 FULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;
   Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.
 FONTI: bollettino ok · modelli 5/5 · radar ok
-CALENDARIO GOLEE alle 22:58: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
+CALENDARIO GOLEE alle 18:02: nessun gruppo di oggi è tracciato in calendario.

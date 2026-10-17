@@ -1,0 +1,274 @@
+{
+ "versione": 2,
+ "tipo": "verdetto",
+ "pianificato": "17:30",
+ "fotografato": "2026-10-17 18:02",
+ "eseguito_da": "github-actions",
+ "controlli": [
+  "15:30",
+  "17:30"
+ ],
+ "data": "2026-10-17",
+ "controllo": "2026-10-17 18:02",
+ "campo": "Campo sportivo Paolo Borsellino",
+ "bollettino": {
+  "nome": "20261017_1458",
+  "emesso": "2026-10-17 14:58",
+  "parte": "today",
+  "zona": "Nord-Occidentale e isole Egadi e Ustica",
+  "livelli": {
+   "temporali": "NESSUNA",
+   "idrogeologico": "NESSUNA",
+   "idraulico": "NESSUNA"
+  },
+  "testo": {
+   "temporali": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA",
+   "idrogeologico": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA",
+   "idraulico": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA"
+  },
+  "avviso": null
+ },
+ "bollettino_errore": null,
+ "modelli_ok": [
+  "ECMWF",
+  "GFS",
+  "ICON-2I",
+  "ICON-EU",
+  "UKMO"
+ ],
+ "modelli_errore": {},
+ "radar": {
+  "fotogrammi": [
+   {
+    "ora": "17:00",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "17:10",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "17:20",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "17:30",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": 105,
+    "direzione": "SE"
+   },
+   {
+    "ora": "17:40",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": 110,
+    "direzione": "SE"
+   },
+   {
+    "ora": "17:50",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": 110,
+    "direzione": "SE"
+   },
+   {
+    "ora": "18:00",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": 110,
+    "direzione": "SE"
+   }
+  ],
+  "tessere_mancanti": 0,
+  "km_per_pixel": 0.48,
+  "aggiornato": "18:00",
+  "ritardo_min": 2
+ },
+ "radar_errore": null,
+ "verdetti": [],
+ "testo": "METEO ALLENAMENTO · sabato 17/10/2026 · controllo delle 18:02\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nALLERTA per il 17/10 (bollettino DPC del 17/10 14:58, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA\n\nOggi (sabato) nessun gruppo si allena. Per vedere comunque i verdetti: --gruppi tutti\n\nRADAR 17:00→18:00: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar ok",
+ "prossimo_controllo": null,
+ "prossimi_allenamenti": [
+  {
+   "data": "2026-10-19",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-21",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-26",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-28",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-11-02",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    },
+    {
+     "nome": "Senior M",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-11-04",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    },
+    {
+     "nome": "Senior M",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  }
+ ],
+ "calendario": {
+  "letto": "18:02",
+  "scheda": "https://golee.it/clubs/sharks-football-asd",
+  "errore": null,
+  "allenamenti_oggi": [],
+  "allenamenti_in_calendario": 16
+ }
+}
