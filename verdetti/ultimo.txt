@@ -1,11 +1,11 @@
-METEO ALLENAMENTO · sabato 17/10/2026 · controllo delle 18:02
+METEO ALLENAMENTO · domenica 18/10/2026 · controllo delle 18:13
 Campo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica
-ALLERTA per il 17/10 (bollettino DPC del 17/10 14:58, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA
+ALLERTA per il 18/10 (bollettino DPC del 18/10 14:43, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA
 
-Oggi (sabato) nessun gruppo si allena. Per vedere comunque i verdetti: --gruppi tutti
+Oggi (domenica) nessun gruppo si allena. Per vedere comunque i verdetti: --gruppi tutti
 
-RADAR 17:00→18:00: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
+RADAR 17:10→18:10: pioggia entro 10 km: no · entro 25 km: sì · eco più vicina a 25 km verso S · area entro 100 km: 1417→741 pixel (1 px ≈ 0,48 km). Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
 FULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;
   Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.
 FONTI: bollettino ok · modelli 5/5 · radar ok
-CALENDARIO GOLEE alle 18:02: nessun gruppo di oggi è tracciato in calendario.
+CALENDARIO GOLEE alle 18:13: nessun gruppo di oggi è tracciato in calendario.
