@@ -2,6 +2,7 @@
 cache/
 esiti/
 ultimo_esito.txt
+innesco.log
 __pycache__/
 *.pyc
 
