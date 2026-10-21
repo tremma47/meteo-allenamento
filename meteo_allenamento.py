@@ -470,8 +470,7 @@ def segnali_temporale(cfg, g, boll, mod, rad, radar_vale, cambio):
         out.append("temporali previsti da " + ", ".join(con_temporale))
     cape = [m["ore"].get(o, {}).get("cape") for m in mod.values() for o in ore]
     cape = [c for c in cape if c is not None]
-    if cape and max(cape) >= s["cape_instabile"]:
-        out.append(f"aria instabile (CAPE fino a {max(cape):.0f} J/kg, soglia {s['cape_instabile']})")
+    instabile = f"aria instabile (CAPE fino a {max(cape):.0f} J/kg, soglia {s['cape_instabile']})" if cape and max(cape) >= s["cape_instabile"] else None
     rif = mod.get(cfg["fonti"]["modello_riferimento"])
     if rif:
         lpi = [rif["ore"].get(o, {}).get("lightning_potential") for o in ore]
@@ -482,7 +481,13 @@ def segnali_temporale(cfg, g, boll, mod, rad, radar_vale, cambio):
         out.append(f"ICON-2I ha cambiato idea rispetto a ieri ({it_mm(cambio[1])} → {it_mm(cambio[0])} mm nella fascia)")
     if radar_vale:
         out.extend(segnali_radar(cfg, rad))
-    return out
+    # Dal 21/10/2026 (Fabrizio): l'aria instabile DA SOLA non è un segnale, è una nota. A Palermo in
+    # autunno il CAPE sopra soglia è frequente anche nei giorni asciutti, e un «da confermare» per
+    # il solo CAPE insegna a ignorare la pagina. Conta quando arriva insieme a un altro segnale
+    # (il 12/10: CAPE 1570 + allerta gialla + ICON-2I che cambia idea).
+    if instabile and out:
+        out.append(instabile)
+    return out, (None if out else instabile)
 
 
 def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
@@ -494,7 +499,7 @@ def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
     n_ok = len(validi)
     piovosi = [k for k, v in validi.items() if v >= s["pioggia_mm_modello"]]
     soglia = s["modelli_pioggia_per_annullare"]
-    segnali = segnali_temporale(cfg, g, boll, mod, rad, radar_vale, cambio)
+    segnali, nota_instabilita = segnali_temporale(cfg, g, boll, mod, rad, radar_vale, cambio)
     righe, titolo = [], ""
     link_boll = cfg["fonti"]["bollettino_pagina"]
 
@@ -539,7 +544,7 @@ def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
             esito = "SI FA"
             righe.append(f"Nessuna allerta temporali; pioggia prevista da {n_modelli(len(piovosi))} su {n_ok} (si annulla da {soglia}).")
             if segnali:
-                titolo = "ATTENZIONE, aria instabile"
+                titolo = "ATTENZIONE, segnali di temporale"
                 righe.append("Segnali di temporale: " + "; ".join(segnali) + ". La regola dice si fa, ma un rovescio isolato sul campo non è prevedibile.")
     else:  # grandi
         livello_max = max(LIVELLI.get(v, 1) for v in boll["livelli"].values()) if boll else 0
@@ -566,6 +571,8 @@ def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
             righe.append(f"Nessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei {n_ok} modelli prevede pioggia nella fascia.")
             if n_ok < s["modelli_minimi"]:
                 righe.append(f"Attenzione: hanno risposto solo {n_modelli(n_ok)} su {n_tot}.")
+    if nota_instabilita and esito != "ANNULLATO":
+        righe.append(f"Nota: {nota_instabilita}. Da sola non cambia il verdetto: possibili rovesci isolati, non prevedibili.")
     if g["regola"] == "piccoli" and g.get("decisione_entro"):
         righe.append(f"Decisione da comunicare entro le {g['decisione_entro']}.")
     temperatura, abbigliamento = consiglio_abbigliamento(cfg, mod, ore, piovosi)
@@ -594,7 +601,7 @@ def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
     return {"gruppo": g["nome"], "fascia": f"{g['inizio']}-{g['fine']}", "regola": g["regola"], "esito": esito,
             "titolo": titolo, "motivi": righe, "mm_per_modello": mm, "modelli_piovosi": piovosi, "segnali": segnali,
             "icon2i_oggi_ieri_mm": cambio, "temperatura": temperatura, "abbigliamento": abbigliamento,
-            "probabilita_pioggia": prob, "conferma": conferma}
+            "probabilita_pioggia": prob, "conferma": conferma, "nota_instabilita": nota_instabilita}
 
 
 def probabilita_pioggia(mod, ore):

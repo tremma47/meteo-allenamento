@@ -141,6 +141,8 @@ piccoli_annullano_con_segnali = false
 piccoli_annullano_da = "ARANCIONE"
 # Segnali di temporale (rendono NON PREVEDIBILE il verdetto dei grandi e mettono
 # in guardia sui piccoli). Indicativi, da tarare:
+# Dal 21/10/2026 (Fabrizio) il CAPE DA SOLO è solo una nota («aria instabile»), non un segnale:
+# diventa segnale solo insieme a un altro (allerta, temporali previsti, fulmini, cambio idea, radar).
 cape_instabile = 400          # J/kg, energia disponibile per i temporali
 lpi_fulmini = 2.0             # potenziale fulmini di ICON-2I (lightning_potential)
 cambio_idea_mm = 1.0          # ICON-2I ha cambiato di tanto la pioggia rispetto a ieri: incertezza alta (solo nota)
