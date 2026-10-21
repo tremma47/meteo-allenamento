@@ -1,0 +1,432 @@
+{
+ "versione": 2,
+ "tipo": "verdetto",
+ "pianificato": "manuale",
+ "fotografato": "2026-10-21 10:38",
+ "eseguito_da": "github-actions",
+ "controlli": [
+  "15:30",
+  "17:30"
+ ],
+ "data": "2026-10-21",
+ "controllo": "2026-10-21 10:38",
+ "campo": "Campo sportivo Paolo Borsellino",
+ "bollettino": {
+  "nome": "20261020_1521",
+  "emesso": "2026-10-20 15:21",
+  "parte": "tomorrow",
+  "zona": "Nord-Occidentale e isole Egadi e Ustica",
+  "livelli": {
+   "temporali": "GIALLA",
+   "idrogeologico": "GIALLA",
+   "idraulico": "NESSUNA"
+  },
+  "testo": {
+   "temporali": "Ordinaria / ALLERTA GIALLA",
+   "idrogeologico": "Ordinaria / ALLERTA GIALLA",
+   "idraulico": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA"
+  },
+  "avviso": null
+ },
+ "bollettino_errore": null,
+ "modelli_ok": [
+  "ECMWF",
+  "GFS",
+  "ICON-2I",
+  "ICON-EU",
+  "UKMO"
+ ],
+ "modelli_errore": {},
+ "radar": {
+  "fotogrammi": [
+   {
+    "ora": "09:30",
+    "entro": {
+     "10": 0,
+     "25": 1394,
+     "50": 10704,
+     "100": 30426
+    },
+    "vicina_km": 10,
+    "direzione": "E"
+   },
+   {
+    "ora": "09:40",
+    "entro": {
+     "10": 0,
+     "25": 169,
+     "50": 8046,
+     "100": 32139
+    },
+    "vicina_km": 20,
+    "direzione": "NE"
+   },
+   {
+    "ora": "09:50",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 4010,
+     "100": 31531
+    },
+    "vicina_km": 26,
+    "direzione": "NE"
+   },
+   {
+    "ora": "10:00",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 652,
+     "100": 27374
+    },
+    "vicina_km": 37,
+    "direzione": "NE"
+   },
+   {
+    "ora": "10:10",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 84,
+     "100": 22207
+    },
+    "vicina_km": 43,
+    "direzione": "NE"
+   },
+   {
+    "ora": "10:20",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 44,
+     "100": 16812
+    },
+    "vicina_km": 46,
+    "direzione": "NE"
+   },
+   {
+    "ora": "10:30",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 10874
+    },
+    "vicina_km": 52,
+    "direzione": "NE"
+   }
+  ],
+  "tessere_mancanti": 0,
+  "km_per_pixel": 0.48,
+  "aggiornato": "10:30",
+  "ritardo_min": 8
+ },
+ "radar_errore": null,
+ "verdetti": [
+  {
+   "gruppo": "Mini Flag + Under 10",
+   "fascia": "18:30-20:00",
+   "regola": "piccoli",
+   "esito": "ANNULLATO",
+   "titolo": "allerta GIALLA temporali",
+   "motivi": [
+    "Allerta GIALLA per temporali sulla zona: i piccoli si annullano con qualsiasi allerta temporali. Avvisare i genitori.",
+    "(Pioggia prevista da 0 modelli su 5: nei giorni di temporali i modelli non sanno dire dove, il bollettino basta.)",
+    "Decisione da comunicare entro le 15:30.",
+    "La probabilità di pioggia dei modelli non vale: con temporali possibili non sanno dire dove pioverà.",
+    "mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0"
+   ],
+   "mm_per_modello": {
+    "ICON-2I": 0.0,
+    "ICON-EU": 0.0,
+    "ECMWF": 0.0,
+    "GFS": 0.0,
+    "UKMO": 0.0
+   },
+   "modelli_piovosi": [],
+   "segnali": [
+    "allerta GIALLA per temporali",
+    "aria instabile (CAPE fino a 510 J/kg, soglia 400)"
+   ],
+   "icon2i_oggi_ieri_mm": [
+    0,
+    0
+   ],
+   "temperatura": 21.61,
+   "abbigliamento": "maglietta",
+   "probabilita_pioggia": 2,
+   "conferma": 0,
+   "coach": {
+    "stato": "in_programma",
+    "letto": "10:38",
+    "in_programma": [
+     "Allenamento MiniFlag 18:30-20:00"
+    ],
+    "annullati": []
+   }
+  },
+  {
+   "gruppo": "Under 13 + Under 15",
+   "fascia": "18:30-20:00",
+   "regola": "grandi",
+   "esito": "NON PREVEDIBILE",
+   "titolo": "temporali possibili",
+   "motivi": [
+    "Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 510 J/kg, soglia 400).",
+    "Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.",
+    "Abbigliamento: maglietta (22 °C previsti).",
+    "Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.",
+    "mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0"
+   ],
+   "mm_per_modello": {
+    "ICON-2I": 0.0,
+    "ICON-EU": 0.0,
+    "ECMWF": 0.0,
+    "GFS": 0.0,
+    "UKMO": 0.0
+   },
+   "modelli_piovosi": [],
+   "segnali": [
+    "allerta GIALLA per temporali",
+    "aria instabile (CAPE fino a 510 J/kg, soglia 400)"
+   ],
+   "icon2i_oggi_ieri_mm": [
+    0,
+    0
+   ],
+   "temperatura": 21.61,
+   "abbigliamento": "maglietta",
+   "probabilita_pioggia": 2,
+   "conferma": null,
+   "coach": {
+    "stato": "in_programma",
+    "letto": "10:38",
+    "in_programma": [
+     "Allenamento Under 13 18:30-20:00",
+     "Allenamento Under 15 18:30-20:00"
+    ],
+    "annullati": []
+   }
+  },
+  {
+   "gruppo": "Senior Femminile",
+   "fascia": "20:30-22:00",
+   "regola": "grandi",
+   "esito": "NON PREVEDIBILE",
+   "titolo": "temporali possibili",
+   "motivi": [
+    "Temporali possibili sul punto: allerta GIALLA per temporali.",
+    "Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.",
+    "Abbigliamento: maglietta (21 °C previsti).",
+    "Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.",
+    "mm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0"
+   ],
+   "mm_per_modello": {
+    "ICON-2I": 0.0,
+    "ICON-EU": 0.0,
+    "ECMWF": 0.0,
+    "GFS": 0.0,
+    "UKMO": 0.0
+   },
+   "modelli_piovosi": [],
+   "segnali": [
+    "allerta GIALLA per temporali"
+   ],
+   "icon2i_oggi_ieri_mm": [
+    0,
+    0
+   ],
+   "temperatura": 20.68,
+   "abbigliamento": "maglietta",
+   "probabilita_pioggia": 0,
+   "conferma": null,
+   "coach": {
+    "stato": "in_programma",
+    "letto": "10:38",
+    "in_programma": [
+     "Allenamento Senior Femminile 20:30-22:00"
+    ],
+    "annullati": []
+   }
+  }
+ ],
+ "testo": "METEO ALLENAMENTO · mercoledì 21/10/2026 · controllo delle 10:38\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nPREVISIONE: la decisione per tutti i gruppi esce alle 15:30. Prima di quell'ora nessun allenamento è annullato né confermato.\nALLERTA per il 21/10 (bollettino DPC del 20/10 15:21, parte «domani»): temporali GIALLA · idrogeologico GIALLA · idraulico NESSUNA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> ANNULLATO · allerta GIALLA temporali\nAllerta GIALLA per temporali sulla zona: i piccoli si annullano con qualsiasi allerta temporali. Avvisare i genitori.\n(Pioggia prevista da 0 modelli su 5: nei giorni di temporali i modelli non sanno dire dove, il bollettino basta.)\nDecisione da comunicare entro le 15:30.\nLa probabilità di pioggia dei modelli non vale: con temporali possibili non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 510 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maglietta (22 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nSENIOR FEMMINILE · 20:30-22:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali.\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maglietta (21 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nRADAR 09:30→10:30: pioggia entro 10 km: no · entro 25 km: no · eco più vicina a 52 km verso NE · area entro 100 km: 30426→10874 pixel (1 px ≈ 0,48 km). Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar ok\nProssimo controllo previsto alle 15:30.",
+ "decisione_alle": "15:30",
+ "prossimo_controllo": "15:30",
+ "prossimi_allenamenti": [
+  {
+   "data": "2026-10-21",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-26",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-10-28",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-11-02",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    },
+    {
+     "nome": "Senior M",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-11-04",
+   "giorno": "mercoledì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    },
+    {
+     "nome": "Senior M",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  },
+  {
+   "data": "2026-11-09",
+   "giorno": "lunedì",
+   "gruppi": [
+    {
+     "nome": "Mini Flag + Under 10",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Under 13 + Under 15",
+     "inizio": "18:30",
+     "fine": "20:00"
+    },
+    {
+     "nome": "Senior Femminile",
+     "inizio": "20:30",
+     "fine": "22:00"
+    },
+    {
+     "nome": "Senior M",
+     "inizio": "20:30",
+     "fine": "22:00"
+    }
+   ]
+  }
+ ],
+ "calendario": {
+  "letto": "10:38",
+  "scheda": "https://golee.it/clubs/sharks-football-asd",
+  "errore": null,
+  "allenamenti_oggi": [
+   {
+    "data": "2026-10-21",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento MiniFlag"
+   },
+   {
+    "data": "2026-10-21",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento Under 13"
+   },
+   {
+    "data": "2026-10-21",
+    "inizio": "18:30",
+    "fine": "20:00",
+    "titolo": "Allenamento Under 15"
+   },
+   {
+    "data": "2026-10-21",
+    "inizio": "20:30",
+    "fine": "22:00",
+    "titolo": "Allenamento Senior Femminile"
+   }
+  ],
+  "allenamenti_in_calendario": 20
+ }
+}

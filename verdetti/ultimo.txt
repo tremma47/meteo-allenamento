@@ -1,5 +1,6 @@
-METEO ALLENAMENTO · mercoledì 21/10/2026 · controllo delle 09:46
+METEO ALLENAMENTO · mercoledì 21/10/2026 · controllo delle 10:38
 Campo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica
+PREVISIONE: la decisione per tutti i gruppi esce alle 15:30. Prima di quell'ora nessun allenamento è annullato né confermato.
 ALLERTA per il 21/10 (bollettino DPC del 20/10 15:21, parte «domani»): temporali GIALLA · idrogeologico GIALLA · idraulico NESSUNA
 
 MINI FLAG + UNDER 10 · 18:30-20:00
@@ -7,7 +8,7 @@ MINI FLAG + UNDER 10 · 18:30-20:00
 Allerta GIALLA per temporali sulla zona: i piccoli si annullano con qualsiasi allerta temporali. Avvisare i genitori.
 (Pioggia prevista da 0 modelli su 5: nei giorni di temporali i modelli non sanno dire dove, il bollettino basta.)
 Decisione da comunicare entro le 15:30.
-Probabilità di pioggia nella fascia 1% (scenari di 4 modelli): conferma 0%.
+La probabilità di pioggia dei modelli non vale: con temporali possibili non sanno dire dove pioverà.
 mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
 
 UNDER 13 + UNDER 15 · 18:30-20:00
@@ -15,7 +16,7 @@ UNDER 13 + UNDER 15 · 18:30-20:00
 Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 510 J/kg, soglia 400).
 Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.
 Abbigliamento: maglietta (22 °C previsti).
-Probabilità di pioggia nella fascia 1% (scenari di 4 modelli): conferma 99%.
+Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.
 mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
 
 SENIOR FEMMINILE · 20:30-22:00
@@ -23,12 +24,12 @@ SENIOR FEMMINILE · 20:30-22:00
 Temporali possibili sul punto: allerta GIALLA per temporali.
 Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.
 Abbigliamento: maglietta (21 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
+Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.
 mm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
 
-RADAR 08:40→09:40: pioggia entro 10 km: no · entro 25 km: sì · eco più vicina a 20 km verso NE · area entro 100 km: 26515→32139 pixel (1 px ≈ 0,48 km). Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
+RADAR 09:30→10:30: pioggia entro 10 km: no · entro 25 km: no · eco più vicina a 52 km verso NE · area entro 100 km: 30426→10874 pixel (1 px ≈ 0,48 km). Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
 FULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;
   Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.
 FONTI: bollettino ok · modelli 5/5 · radar ok
 Prossimo controllo previsto alle 15:30.
-CALENDARIO GOLEE alle 09:46: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
+CALENDARIO GOLEE alle 10:38: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
