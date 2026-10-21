@@ -511,11 +511,20 @@ def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
                     righe.append(f"Pioggia prevista da {n_modelli(len(piovosi))} su {n_ok} (si annulla da {soglia}).")
                 else:
                     righe.append(f"Hanno risposto {n_modelli(n_ok)} su {n_tot}.")
+        elif max(LIVELLI.get(v, 1) for v in boll["livelli"].values()) >= LIVELLI[s.get("piccoli_annullano_da", "GIALLA").upper()]:
+            # Dal 21/10/2026 (Fabrizio): i piccoli si annullano per allerta solo da ARANCIONE in su
+            # (soglia in config: piccoli_annullano_da). Prima bastava la gialla temporali.
+            gravi = [f"{k} {v}" for k, v in boll["livelli"].items() if LIVELLI.get(v, 1) >= LIVELLI[s.get("piccoli_annullano_da", "GIALLA").upper()]]
+            esito, titolo = "ANNULLATO", f"allerta {', '.join(gravi)}"
+            righe.append(f"Allerta {', '.join(gravi)} sulla zona: i piccoli si annullano con allerta da {s.get('piccoli_annullano_da', 'GIALLA').lower()} in su. Avvisare i genitori.")
+        elif LIVELLI.get(boll["livelli"]["temporali"], 1) >= 1 and n_ok >= s["modelli_minimi"] and len(piovosi) >= soglia:
+            esito, titolo = "ANNULLATO", "pioggia prevista"
+            righe.append(f"Pioggia prevista nella fascia da {n_modelli(len(piovosi))} su {n_ok} ({', '.join(piovosi)}); si annulla da {soglia}. In più allerta {boll['livelli']['temporali']} per temporali.")
         elif LIVELLI.get(boll["livelli"]["temporali"], 1) >= 1:
-            esito, titolo = "ANNULLATO", f"allerta {boll['livelli']['temporali']} temporali"
-            righe.append(f"Allerta {boll['livelli']['temporali']} per temporali sulla zona: i piccoli si annullano con qualsiasi allerta temporali. Avvisare i genitori.")
+            esito, titolo = "NON PREVEDIBILE", f"allerta {boll['livelli']['temporali']} temporali"
+            righe.append(f"Allerta {boll['livelli']['temporali']} per temporali sulla zona: non si annulla in anticipo, si decide alle 15:30 col bollettino del giorno. Con temporali possibili il punto non è prevedibile.")
             if n_ok:
-                righe.append(f"(Pioggia prevista da {n_modelli(len(piovosi))} su {n_ok}: nei giorni di temporali i modelli non sanno dire dove, il bollettino basta.)")
+                righe.append(f"Pioggia prevista da {n_modelli(len(piovosi))} su {n_ok} (si annulla da {soglia}): nei giorni di temporali i modelli non sanno dire dove.")
         elif n_ok < s["modelli_minimi"]:
             esito, titolo = "NON PREVEDIBILE", "dati insufficienti"
             righe.append(f"Hanno risposto solo {n_modelli(n_ok)} su {n_tot} (ne servono almeno {s['modelli_minimi']}): la regola «pioggia prevista da {soglia} su {n_tot}» non si può applicare. Nessuna allerta temporali.")

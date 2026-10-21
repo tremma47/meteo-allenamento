@@ -25,10 +25,13 @@ zona_allerta = "Nord-Occidentale e isole Egadi e Ustica"
 
 # ---------------------------------------------------------------------------
 # GRUPPI. Per ciascuno: giorni (lun mar mer gio ven sab dom), orario, regola.
-#   regola = "piccoli"  -> si annulla con QUALSIASI allerta temporali, oppure se
+#   regola = "piccoli"  -> si annulla con allerta ARANCIONE o ROSSA (su uno qualsiasi dei
+#                          tre rischi; soglia: piccoli_annullano_da, qui sotto), oppure se
 #                          almeno N modelli su 5 prevedono pioggia nella fascia
 #                          (N = modelli_pioggia_per_annullare, qui sotto).
-#                          Si decide presto, sulla previsione: i genitori vanno avvisati.
+#                          Con allerta GIALLA temporali NON si annulla in anticipo: il verdetto
+#                          è «da confermare» e si decide alle 15:30 (Fabrizio, 21/10/2026;
+#                          fino ad allora bastava la gialla per annullare).
 #   regola = "grandi"   -> si annulla solo con allerta ARANCIONE o ROSSA, o con
 #                          fulmini in zona. Con pioggia senza temporali ci si allena.
 #                          Si decide un'ora prima, sul radar.
@@ -131,6 +134,11 @@ modelli_minimi = 3
 # del giorno prima non dava allerta, e la regola con "false" avrebbe detto SI FA
 # ai piccoli con CAPE 1570. Fabrizio e coach Daniele li avevano annullati: giusto.
 piccoli_annullano_con_segnali = false
+# Da quale livello di allerta (su uno qualsiasi dei tre rischi) i piccoli si annullano.
+# "ARANCIONE" dal 21/10/2026 (Fabrizio): «allerta gialla non annulliamo preventivamente, si
+# decide alle 15:30». Prima era di fatto "GIALLA" (bastava la gialla temporali). Il caso che la
+# regola vecchia aveva preso: 12/10/2026, gialla temporali, modelli quasi a zero, ha diluviato.
+piccoli_annullano_da = "ARANCIONE"
 # Segnali di temporale (rendono NON PREVEDIBILE il verdetto dei grandi e mettono
 # in guardia sui piccoli). Indicativi, da tarare:
 cape_instabile = 400          # J/kg, energia disponibile per i temporali
