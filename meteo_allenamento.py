@@ -563,8 +563,20 @@ def verdetto(cfg, g, boll, mod, mod_err, rad, radar_vale, cambio):
     if abbigliamento and esito != "ANNULLATO":
         righe.append(f"Abbigliamento: {abbigliamento} ({temperatura:.0f} °C previsti).")
     prob, n_prob = probabilita_pioggia(mod, ore)
-    conferma = None if prob is None else (0 if esito == "ANNULLATO" else 100 - prob)
-    if prob is not None:
+    # Con segnali di temporale la probabilità di pioggia dei modelli non vale (le celle nascono sul
+    # posto e i modelli non le vedono): il 21/10/2026, allerta gialla e pioggia sul campo al radar, dava
+    # 1% e «conferma 99%». Deciso con Fabrizio lo stesso giorno: in quei casi niente percentuale.
+    if esito == "ANNULLATO":
+        conferma = 0
+    elif segnali:
+        conferma = None
+    else:
+        conferma = None if prob is None else 100 - prob
+    if segnali and esito != "ANNULLATO":
+        righe.append("Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.")
+    elif segnali:
+        righe.append("La probabilità di pioggia dei modelli non vale: con temporali possibili non sanno dire dove pioverà.")
+    elif prob is not None:
         righe.append(f"Probabilità di pioggia nella fascia {prob}% (scenari di {n_modelli(n_prob)}): conferma {conferma}%.")
     mm_riga = " · ".join(f"{m['nome']} {it_mm(mm.get(m['nome']))}" for m in cfg["fonti"]["modelli"])
     righe.append(f"mm previsti {ore[0][:2]}-{ore[-1][:2]}: {mm_riga}")
@@ -624,10 +636,25 @@ def consiglio_abbigliamento(cfg, mod, ore, piovosi):
 
 
 # ----------------------------------------------------------------------------- testo
+def e_previsione(cfg, data, adesso):
+    """Prima del primo controllo del giorno ([controlli].orari[0], oggi 15:30) il verdetto è una
+    PREVISIONE: non si annulla e non si conferma niente (Fabrizio, 21/10/2026). Torna l'ora della
+    decisione se il verdetto è una previsione, altrimenti None."""
+    orari = cfg.get("controlli", {}).get("orari", [])
+    if not orari:
+        return None
+    if data > adesso.date() or (data == adesso.date() and adesso.hour * 60 + adesso.minute < minuti(orari[0])):
+        return orari[0]
+    return None
+
+
 def componi(cfg, data, adesso, gruppi, boll, boll_err, mod, mod_err, rad, rad_err, verdetti):
     c = cfg["campo"]
     r = [f"METEO ALLENAMENTO · {GIORNI_LUNGHI[data.weekday()]} {data:%d/%m/%Y} · controllo delle {adesso:%H:%M}",
          f"{c['nome']} · zona allerta: {c['zona_allerta']}"]
+    decisione = e_previsione(cfg, data, adesso)
+    if gruppi and decisione:
+        r.append(f"PREVISIONE: la decisione per tutti i gruppi esce alle {decisione}. Prima di quell'ora nessun allenamento è annullato né confermato.")
     if boll_err:
         r.append(f"ALLERTA: BOLLETTINO NON DISPONIBILE ({boll_err}). Controlla a mano: {cfg['fonti']['bollettino_pagina']}")
     else:
@@ -717,7 +744,8 @@ def main():
                  "bollettino": None if not boll else {**boll, "emesso": boll["emesso"].strftime("%Y-%m-%d %H:%M")},
                  "bollettino_errore": boll_err, "modelli_ok": sorted(m["nome"] for m in mod.values()),
                  "modelli_errore": mod_err, "radar": rad, "radar_errore": rad_err,
-                 "verdetti": verdetti, "testo": testo}
+                 "verdetti": verdetti, "testo": testo,
+                 "decisione_alle": e_previsione(cfg, data, adesso)}
     print(testo)
     if a.json:
         print("\n" + json.dumps(risultato, ensure_ascii=False, indent=1, default=str))

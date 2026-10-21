@@ -88,6 +88,7 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,6vw,2.2rem)
 .verdetto .conferma{margin:10px 0 0;display:flex;align-items:baseline;gap:10px}
 .verdetto .conferma .et{font-weight:600;font-size:14px;opacity:.9}
 .verdetto .conferma .num{font-family:var(--display);font-size:1.6rem;line-height:1}
+.verdetto .conferma .testo-conf{font-size:.97rem}
 .verdetto.annullato .conferma .num,.verdetto.nonprev .conferma .num{color:var(--giallo-morbido)}
 .verdetto .abbigliamento{margin:10px 0 0;font-size:.97rem}
 .verdetto .abbigliamento .et{font-weight:600;font-size:14px;opacity:.9;display:inline;margin-right:6px}
@@ -213,6 +214,12 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
     'ANNULLATO': { testo: 'Allenamento annullato.', classe: 'annullato' },
     'NON PREVEDIBILE': { testo: 'Allenamento da confermare.', classe: 'nonprev' }
   };
+  // Prima della decisione delle 15:30 nessun allenamento è annullato né confermato (Fabrizio, 21/10/2026).
+  var PREVISIONI = {
+    'SI FA': { testo: 'Previsione: si fa.', classe: 'sifa', breve: 'previsione: si fa' },
+    'ANNULLATO': { testo: 'Probabile annullamento.', classe: 'nonprev', breve: 'probabile annullamento' },
+    'NON PREVEDIBILE': { testo: 'Previsione incerta.', classe: 'nonprev', breve: 'previsione incerta' }
+  };
 
   function adessoRoma() {
     var parti = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
@@ -321,9 +328,10 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
     (Array.isArray(testo) ? testo : [testo]).forEach(function (r) { voce.appendChild(el('dd', null, r)); });
     return voce;
   }
-  function statoSettore(v) {
+  function statoSettore(v, previsione) {
     var e = ESITI[v.esito] || { testo: v.esito, classe: 'nonprev' };
     if (v.coach && v.coach.stato === 'annullato') return { classe: 'annullato', testo: 'Allenamento annullato.', breve: 'annullato dai coach' };
+    if (previsione && PREVISIONI[v.esito]) return PREVISIONI[v.esito];
     return { classe: e.classe, testo: e.testo, breve: e.testo.replace(/^Allenamento /, '').replace(/\.$/, '') };
   }
   function gradi(x) { return x == null ? null : Math.round(x) + ' °C'; }
@@ -346,11 +354,15 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
     var temp = fasce.map(function (fx) { var g = gradi(perFascia[fx].temperatura); return g ? (fasce.length > 1 ? fx + ': ' : '') + g : null; }).filter(Boolean);
     if (temp.length) ul.appendChild(rigaMeteo('Temperatura prevista', temp));
     var pioggia = fasce.map(function (fx) {
-      var n = (perFascia[fx].modelli_piovosi || []).length;
-      return (fasce.length > 1 ? fx + ': ' : '') + (tot === 0 ? 'modelli non disponibili' : n === 0 ? 'no' : 'sì, ' + n + (n === 1 ? ' modello' : ' modelli') + ' su ' + tot);
+      var n = (perFascia[fx].modelli_piovosi || []).length, temporali = (perFascia[fx].segnali || []).length > 0;
+      return (fasce.length > 1 ? fx + ': ' : '') + (tot === 0 ? 'modelli non disponibili' : n === 0 ? (temporali ? 'no, ma i modelli non vedono i temporali' : 'no') : 'sì, ' + n + (n === 1 ? ' modello' : ' modelli') + ' su ' + tot);
     });
     ul.appendChild(rigaMeteo('Pioggia prevista', pioggia.length ? pioggia : 'n.d.'));
-    var prob = fasce.map(function (fx) { var v = perFascia[fx].probabilita_pioggia; return v == null ? null : (fasce.length > 1 ? fx + ': ' : '') + v + '%'; }).filter(Boolean);
+    var prob = fasce.map(function (fx) {
+      var v = perFascia[fx].probabilita_pioggia, pre = fasce.length > 1 ? fx + ': ' : '';
+      if ((perFascia[fx].segnali || []).length) return pre + 'non affidabile, temporali possibili';
+      return v == null ? null : pre + v + '%';
+    }).filter(Boolean);
     if (prob.length) ul.appendChild(rigaMeteo('Probabilità di pioggia', prob));
     var segnali = [];
     verdetti.forEach(function (v) { (v.segnali || []).forEach(function (s) { if (segnali.indexOf(s) < 0) segnali.push(s); }); });
@@ -376,8 +388,8 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
     box.appendChild(ul);
     return box;
   }
-  function cardSettore(v, orientativo) {
-    var e = ESITI[v.esito] || { testo: v.esito, classe: 'nonprev' }, s = statoSettore(v);
+  function cardSettore(v, previsione, decisione) {
+    var e = ESITI[v.esito] || { testo: v.esito, classe: 'nonprev' }, s = statoSettore(v, previsione);
     var classe = s.classe, etichetta = s.testo, titolo = v.titolo || '', righeCoach = [];
     var c = v.coach;
     if (c && c.stato === 'annullato') {
@@ -390,16 +402,18 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
       righeCoach.push('In calendario Golee alle ' + c.letto + ': ' + c.in_programma.join(', ') + '.');
     }
     var card = el('article', 'verdetto ' + classe);
-    card.appendChild(el('h4', 'gruppo', v.gruppo + ' · ' + v.fascia + (orientativo ? ' · previsione' : '')));
+    card.appendChild(el('h4', 'gruppo', v.gruppo + ' · ' + v.fascia + (previsione ? ' · previsione' : '')));
     card.appendChild(el('p', 'esito', etichetta));
     if (titolo) card.appendChild(el('p', 'titolo', titolo));
-    var conf = (c && c.stato === 'annullato') ? 0 : v.conferma;
-    if (conf != null) {
-      var pc = el('p', 'conferma');
-      pc.appendChild(el('span', 'et', 'Conferma'));
-      pc.appendChild(el('span', 'num', conf + '%'));
-      card.appendChild(pc);
-    }
+    // La conferma c'è sempre: un numero, oppure il motivo per cui un numero non ci può essere.
+    var conf = v.conferma, confTesto = '';
+    if (c && c.stato === 'annullato') conf = 0;
+    else if (previsione && v.esito === 'ANNULLATO') { conf = null; confTesto = 'si decide alle ' + (decisione || '15:30'); }
+    else if (conf == null) confTesto = (v.segnali || []).length ? 'non calcolabile, temporali possibili' : 'non disponibile';
+    var pc = el('p', 'conferma');
+    pc.appendChild(el('span', 'et', 'Conferma'));
+    pc.appendChild(conf != null ? el('span', 'num', conf + '%') : el('span', 'testo-conf', confTesto));
+    card.appendChild(pc);
     if (v.abbigliamento && classe !== 'annullato') {
       var ab = el('p', 'abbigliamento');
       ab.appendChild(el('span', 'et', 'Abbigliamento'));
@@ -421,9 +435,14 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
   function mostraOggi(foto, ora, eta) {
     var orient = foto.tipo === 'orientativo', domani = eta < 0;
     var controlli = foto.controlli || [];
+    var decisione = foto.decisione_alle || (orient && controlli.length ? controlli[0] : null);
+    var previsione = !!decisione;
     var testa = el('div', 'quando');
     testa.appendChild(el('p', 'kicker', (domani ? 'Domani, ' : '') + dataLunga(foto.data)));
-    if (orient) {
+    if (previsione && !orient) {
+      testa.appendChild(el('h2', null, 'Previsione delle ' + oraDi(foto.controllo) + '.'));
+      testa.appendChild(el('p', 'nota', 'La decisione esce alle ' + decisione + ': fino ad allora nessun allenamento è annullato né confermato.'));
+    } else if (orient) {
       testa.appendChild(el('h2', null, domani ? 'Previsione per domani.' : 'Previsione per oggi.'));
       var quando = domani ? 'stasera alle ' : 'ieri sera alle ';
       var vero = controlli.length ? ('Il verdetto vero esce ' + (domani ? 'domani ' : '') + 'alle ' + controlli[0] + (controlli.length > 1 ? ', aggiornato alle ' + controlli.slice(1).join(' e alle ') : '') + '.') : '';
@@ -449,25 +468,25 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
     }
 
     var rie = el('ul', 'riepilogo');
-    verdetti.forEach(function (v) { var s = statoSettore(v); rie.appendChild(el('li', s.classe, v.gruppo + ': ' + s.breve)); });
+    verdetti.forEach(function (v) { var s = statoSettore(v, previsione); rie.appendChild(el('li', s.classe, v.gruppo + ': ' + s.breve)); });
     stato.appendChild(rie);
 
     stato.appendChild(bloccoMeteo(foto));
 
     var settori = el('section', 'settori');
     settori.appendChild(el('h3', 'kicker', 'I settori'));
-    verdetti.forEach(function (v) { settori.appendChild(cardSettore(v, orient)); });
+    verdetti.forEach(function (v) { settori.appendChild(cardSettore(v, previsione, decisione)); });
     stato.appendChild(settori);
 
     var pc = foto.prossimo_controllo;
     if (pc && !domani && ora.minuti >= minuti(pc) + RITARDO_TOLLERATO) {
       var tardi = el('div', 'avviso');
-      tardi.appendChild(el('strong', null, (orient ? 'Il verdetto delle ' : "L'aggiornamento delle ") + pc + ' non è ancora arrivato. '));
-      tardi.appendChild(document.createTextNode('Vale ' + (orient ? 'la previsione di ieri sera' : 'il verdetto delle ' + oraDi(foto.controllo)) + '; chiedi conferma ai coach sul gruppo.'));
+      tardi.appendChild(el('strong', null, (previsione ? 'La decisione delle ' + pc + ' non è ancora arrivata. ' : "L'aggiornamento delle " + pc + ' non è ancora arrivato. ')));
+      tardi.appendChild(document.createTextNode((previsione ? 'Qui sopra c’è solo la previsione' : 'Vale il verdetto delle ' + oraDi(foto.controllo)) + '; chiedi conferma ai coach sul gruppo.'));
       tardi.style.marginTop = '18px';
       stato.appendChild(tardi);
     } else if (pc) {
-      stato.appendChild(el('p', 'prossimo', (orient ? 'Il verdetto vero esce ' + (domani ? 'domani ' : '') + 'alle ' : 'Prossimo aggiornamento alle ') + pc + '.'));
+      stato.appendChild(el('p', 'prossimo', (previsione ? 'La decisione esce ' + (domani ? 'domani ' : '') + 'alle ' : 'Prossimo aggiornamento alle ') + pc + '.'));
     } else {
       stato.appendChild(el('p', 'prossimo', 'Ultimo aggiornamento di oggi.'));
     }
