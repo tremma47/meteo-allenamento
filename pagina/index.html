@@ -408,7 +408,8 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
     // La conferma c'è sempre: un numero, oppure il motivo per cui un numero non ci può essere.
     var conf = v.conferma, confTesto = '';
     if (c && c.stato === 'annullato') conf = 0;
-    else if (previsione && v.esito === 'ANNULLATO') { conf = null; confTesto = 'si decide alle ' + (decisione || '15:30'); }
+    // Prima delle 15:30 la conferma non c'è per nessun gruppo: arriva con la decisione (Fabrizio, 21/10/2026).
+    else if (previsione) { conf = null; confTesto = 'alle ' + (decisione || '15:30'); }
     else if (conf == null) confTesto = (v.segnali || []).length ? 'non calcolabile, temporali possibili' : 'non disponibile';
     var pc = el('p', 'conferma');
     pc.appendChild(el('span', 'et', 'Conferma'));
