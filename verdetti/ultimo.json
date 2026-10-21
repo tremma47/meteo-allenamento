@@ -1,29 +1,29 @@
 {
  "versione": 2,
  "tipo": "verdetto",
- "pianificato": "manuale",
- "fotografato": "2026-10-21 11:25",
+ "pianificato": "15:30",
+ "fotografato": "2026-10-21 15:32",
  "eseguito_da": "github-actions",
  "controlli": [
   "15:30",
   "17:30"
  ],
  "data": "2026-10-21",
- "controllo": "2026-10-21 11:25",
+ "controllo": "2026-10-21 15:32",
  "campo": "Campo sportivo Paolo Borsellino",
  "bollettino": {
-  "nome": "20261020_1521",
-  "emesso": "2026-10-20 15:21",
-  "parte": "tomorrow",
+  "nome": "20261021_1436",
+  "emesso": "2026-10-21 14:36",
+  "parte": "today",
   "zona": "Nord-Occidentale e isole Egadi e Ustica",
   "livelli": {
-   "temporali": "GIALLA",
-   "idrogeologico": "GIALLA",
+   "temporali": "NESSUNA",
+   "idrogeologico": "NESSUNA",
    "idraulico": "NESSUNA"
   },
   "testo": {
-   "temporali": "Ordinaria / ALLERTA GIALLA",
-   "idrogeologico": "Ordinaria / ALLERTA GIALLA",
+   "temporali": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA",
+   "idrogeologico": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA",
    "idraulico": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA"
   },
   "avviso": null
@@ -40,87 +40,87 @@
  "radar": {
   "fotogrammi": [
    {
-    "ora": "10:20",
-    "entro": {
-     "10": 0,
-     "25": 0,
-     "50": 44,
-     "100": 16812
-    },
-    "vicina_km": 46,
-    "direzione": "NE"
-   },
-   {
-    "ora": "10:30",
-    "entro": {
-     "10": 0,
-     "25": 0,
-     "50": 0,
-     "100": 10874
-    },
-    "vicina_km": 52,
-    "direzione": "NE"
-   },
-   {
-    "ora": "10:40",
-    "entro": {
-     "10": 0,
-     "25": 0,
-     "50": 0,
-     "100": 5689
-    },
-    "vicina_km": 60,
-    "direzione": "NE"
-   },
-   {
-    "ora": "10:50",
-    "entro": {
-     "10": 0,
-     "25": 0,
-     "50": 0,
-     "100": 2135
-    },
-    "vicina_km": 66,
-    "direzione": "NE"
-   },
-   {
-    "ora": "11:00",
-    "entro": {
-     "10": 0,
-     "25": 0,
-     "50": 0,
-     "100": 507
-    },
-    "vicina_km": 87,
-    "direzione": "NE"
-   },
-   {
-    "ora": "11:10",
-    "entro": {
-     "10": 0,
-     "25": 0,
-     "50": 0,
-     "100": 42
-    },
-    "vicina_km": 96,
-    "direzione": "NE"
-   },
-   {
-    "ora": "11:20",
+    "ora": "14:30",
     "entro": {
      "10": 0,
      "25": 0,
      "50": 0,
      "100": 0
     },
-    "vicina_km": 114,
-    "direzione": "NE"
+    "vicina_km": 102,
+    "direzione": "SE"
+   },
+   {
+    "ora": "14:40",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": 108,
+    "direzione": "SE"
+   },
+   {
+    "ora": "14:50",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "15:00",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "15:10",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "15:20",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "15:30",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
    }
   ],
   "tessere_mancanti": 0,
   "km_per_pixel": 0.48,
-  "aggiornato": "11:20",
-  "ritardo_min": 6
+  "aggiornato": "15:30",
+  "ritardo_min": 2
  },
  "radar_errore": null,
  "verdetti": [
@@ -128,11 +128,11 @@
    "gruppo": "Mini Flag + Under 10",
    "fascia": "18:30-20:00",
    "regola": "piccoli",
-   "esito": "NON PREVEDIBILE",
-   "titolo": "allerta GIALLA temporali",
+   "esito": "SI FA",
+   "titolo": "ATTENZIONE, aria instabile",
    "motivi": [
-    "Allerta GIALLA per temporali sulla zona: non si annulla in anticipo, si decide alle 15:30 col bollettino del giorno. Con temporali possibili il punto non è prevedibile.",
-    "Pioggia prevista da 0 modelli su 5 (si annulla da 3): nei giorni di temporali i modelli non sanno dire dove.",
+    "Nessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).",
+    "Segnali di temporale: aria instabile (CAPE fino a 760 J/kg, soglia 400). La regola dice si fa, ma un rovescio isolato sul campo non è prevedibile.",
     "Decisione da comunicare entro le 15:30.",
     "Abbigliamento: maglietta (22 °C previsti).",
     "Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.",
@@ -147,20 +147,19 @@
    },
    "modelli_piovosi": [],
    "segnali": [
-    "allerta GIALLA per temporali",
     "aria instabile (CAPE fino a 760 J/kg, soglia 400)"
    ],
    "icon2i_oggi_ieri_mm": [
     0,
     0
    ],
-   "temperatura": 21.53,
+   "temperatura": 21.63,
    "abbigliamento": "maglietta",
    "probabilita_pioggia": 1,
    "conferma": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "11:27",
+    "letto": "15:32",
     "in_programma": [
      "Allenamento MiniFlag 18:30-20:00"
     ],
@@ -174,7 +173,7 @@
    "esito": "NON PREVEDIBILE",
    "titolo": "temporali possibili",
    "motivi": [
-    "Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 760 J/kg, soglia 400).",
+    "Temporali possibili sul punto: aria instabile (CAPE fino a 760 J/kg, soglia 400).",
     "Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.",
     "Abbigliamento: maglietta (22 °C previsti).",
     "Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.",
@@ -189,20 +188,19 @@
    },
    "modelli_piovosi": [],
    "segnali": [
-    "allerta GIALLA per temporali",
     "aria instabile (CAPE fino a 760 J/kg, soglia 400)"
    ],
    "icon2i_oggi_ieri_mm": [
     0,
     0
    ],
-   "temperatura": 21.53,
+   "temperatura": 21.63,
    "abbigliamento": "maglietta",
    "probabilita_pioggia": 1,
    "conferma": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "11:27",
+    "letto": "15:32",
     "in_programma": [
      "Allenamento Under 13 18:30-20:00",
      "Allenamento Under 15 18:30-20:00"
@@ -214,13 +212,12 @@
    "gruppo": "Senior Femminile",
    "fascia": "20:30-22:00",
    "regola": "grandi",
-   "esito": "NON PREVEDIBILE",
-   "titolo": "temporali possibili",
+   "esito": "SI FA",
+   "titolo": "",
    "motivi": [
-    "Temporali possibili sul punto: allerta GIALLA per temporali.",
-    "Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.",
+    "Nessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.",
     "Abbigliamento: maglietta (21 °C previsti).",
-    "Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.",
+    "Probabilità di pioggia nella fascia 1% (scenari di 4 modelli): conferma 99%.",
     "mm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0"
    ],
    "mm_per_modello": {
@@ -231,20 +228,18 @@
     "UKMO": 0.0
    },
    "modelli_piovosi": [],
-   "segnali": [
-    "allerta GIALLA per temporali"
-   ],
+   "segnali": [],
    "icon2i_oggi_ieri_mm": [
     0,
     0
    ],
-   "temperatura": 20.66,
+   "temperatura": 20.689999999999998,
    "abbigliamento": "maglietta",
-   "probabilita_pioggia": 0,
-   "conferma": null,
+   "probabilita_pioggia": 1,
+   "conferma": 99,
    "coach": {
     "stato": "in_programma",
-    "letto": "11:27",
+    "letto": "15:32",
     "in_programma": [
      "Allenamento Senior Femminile 20:30-22:00"
     ],
@@ -252,9 +247,9 @@
    }
   }
  ],
- "testo": "METEO ALLENAMENTO · mercoledì 21/10/2026 · controllo delle 11:25\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nPREVISIONE: la decisione per tutti i gruppi esce alle 15:30. Prima di quell'ora nessun allenamento è annullato né confermato.\nALLERTA per il 21/10 (bollettino DPC del 20/10 15:21, parte «domani»): temporali GIALLA · idrogeologico GIALLA · idraulico NESSUNA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> NON PREVEDIBILE · allerta GIALLA temporali\nAllerta GIALLA per temporali sulla zona: non si annulla in anticipo, si decide alle 15:30 col bollettino del giorno. Con temporali possibili il punto non è prevedibile.\nPioggia prevista da 0 modelli su 5 (si annulla da 3): nei giorni di temporali i modelli non sanno dire dove.\nDecisione da comunicare entro le 15:30.\nAbbigliamento: maglietta (22 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 760 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maglietta (22 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nSENIOR FEMMINILE · 20:30-22:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali.\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maglietta (21 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nRADAR 10:20→11:20: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar ok\nProssimo controllo previsto alle 15:30.",
- "decisione_alle": "15:30",
- "prossimo_controllo": "15:30",
+ "testo": "METEO ALLENAMENTO · mercoledì 21/10/2026 · controllo delle 15:32\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nALLERTA per il 21/10 (bollettino DPC del 21/10 14:36, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> SI FA · ATTENZIONE, aria instabile\nNessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).\nSegnali di temporale: aria instabile (CAPE fino a 760 J/kg, soglia 400). La regola dice si fa, ma un rovescio isolato sul campo non è prevedibile.\nDecisione da comunicare entro le 15:30.\nAbbigliamento: maglietta (22 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: aria instabile (CAPE fino a 760 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maglietta (22 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nSENIOR FEMMINILE · 20:30-22:00\n>> SI FA\nNessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.\nAbbigliamento: maglietta (21 °C previsti).\nProbabilità di pioggia nella fascia 1% (scenari di 4 modelli): conferma 99%.\nmm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nRADAR 14:30→15:30: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar ok\nProssimo controllo previsto alle 17:30.",
+ "decisione_alle": null,
+ "prossimo_controllo": "17:30",
  "prossimi_allenamenti": [
   {
    "data": "2026-10-21",
@@ -399,7 +394,7 @@
   }
  ],
  "calendario": {
-  "letto": "11:27",
+  "letto": "15:32",
   "scheda": "https://golee.it/clubs/sharks-football-asd",
   "errore": null,
   "allenamenti_oggi": [
