@@ -157,7 +157,7 @@
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "19:56",
+    "letto": "23:59",
     "in_programma": [
      "Allenamento MiniFlag 18:30-20:00"
     ],
@@ -196,7 +196,7 @@
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "19:56",
+    "letto": "23:59",
     "in_programma": [
      "Allenamento Under 13 18:30-20:00",
      "Allenamento Under 15 18:30-20:00"
@@ -236,7 +236,7 @@
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "19:56",
+    "letto": "23:59",
     "in_programma": [
      "Allenamento Senior Femminile 20:30-22:00"
     ],
@@ -396,7 +396,7 @@
   }
  ],
  "calendario": {
-  "letto": "19:56",
+  "letto": "23:59",
   "scheda": "https://golee.it/clubs/sharks-football-asd",
   "errore": null,
   "allenamenti_oggi": [
