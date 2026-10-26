@@ -157,7 +157,7 @@
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "17:32",
+    "letto": "19:56",
     "in_programma": [
      "Allenamento MiniFlag 18:30-20:00"
     ],
@@ -196,7 +196,7 @@
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "17:32",
+    "letto": "19:56",
     "in_programma": [
      "Allenamento Under 13 18:30-20:00",
      "Allenamento Under 15 18:30-20:00"
@@ -236,9 +236,9 @@
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "17:32",
+    "letto": "19:56",
     "in_programma": [
-     "Allenamento Senior Femminile 19:30-21:00"
+     "Allenamento Senior Femminile 20:30-22:00"
     ],
     "annullati": []
    }
@@ -396,7 +396,7 @@
   }
  ],
  "calendario": {
-  "letto": "17:32",
+  "letto": "19:56",
   "scheda": "https://golee.it/clubs/sharks-football-asd",
   "errore": null,
   "allenamenti_oggi": [
@@ -420,8 +420,8 @@
    },
    {
     "data": "2026-10-26",
-    "inizio": "19:30",
-    "fine": "21:00",
+    "inizio": "20:30",
+    "fine": "22:00",
     "titolo": "Allenamento Senior Femminile"
    }
   ],
