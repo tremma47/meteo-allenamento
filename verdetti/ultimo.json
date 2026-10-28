@@ -1,20 +1,20 @@
 {
  "versione": 2,
- "tipo": "orientativo",
- "pianificato": "23:00",
- "fotografato": "2026-10-27 23:02",
+ "tipo": "verdetto",
+ "pianificato": "15:30",
+ "fotografato": "2026-10-28 15:32",
  "eseguito_da": "github-actions",
  "controlli": [
   "15:30",
   "17:30"
  ],
  "data": "2026-10-28",
- "controllo": "2026-10-28 23:02",
+ "controllo": "2026-10-28 15:32",
  "campo": "Campo sportivo Paolo Borsellino",
  "bollettino": {
-  "nome": "20261027_1427",
-  "emesso": "2026-10-27 14:27",
-  "parte": "tomorrow",
+  "nome": "20261028_1437",
+  "emesso": "2026-10-28 14:37",
+  "parte": "today",
   "zona": "Nord-Occidentale e isole Egadi e Ustica",
   "livelli": {
    "temporali": "NESSUNA",
@@ -37,8 +37,92 @@
   "UKMO"
  ],
  "modelli_errore": {},
- "radar": null,
- "radar_errore": "il radar esiste solo per oggi: RainViewer tiene le ultime 2 ore",
+ "radar": {
+  "fotogrammi": [
+   {
+    "ora": "14:30",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "14:40",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "14:50",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "15:00",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "15:10",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "15:20",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   },
+   {
+    "ora": "15:30",
+    "entro": {
+     "10": 0,
+     "25": 0,
+     "50": 0,
+     "100": 0
+    },
+    "vicina_km": null,
+    "direzione": "-"
+   }
+  ],
+  "tessere_mancanti": 0,
+  "km_per_pixel": 0.48,
+  "aggiornato": "15:30",
+  "ritardo_min": 2
+ },
+ "radar_errore": null,
  "verdetti": [
   {
    "gruppo": "Mini Flag + Under 10",
@@ -66,14 +150,14 @@
     0,
     0
    ],
-   "temperatura": 17.130000000000003,
+   "temperatura": 17.25,
    "abbigliamento": "maniche lunghe",
    "probabilita_pioggia": 0,
    "conferma": 100,
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "01:20",
+    "letto": "15:32",
     "in_programma": [
      "Allenamento MiniFlag 18:30-20:00"
     ],
@@ -105,14 +189,14 @@
     0,
     0
    ],
-   "temperatura": 17.130000000000003,
+   "temperatura": 17.25,
    "abbigliamento": "maniche lunghe",
    "probabilita_pioggia": 0,
    "conferma": 100,
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "01:20",
+    "letto": "15:32",
     "in_programma": [
      "Allenamento Under 13 18:30-20:00",
      "Allenamento Under 15 18:30-20:00"
@@ -145,14 +229,14 @@
     0,
     0
    ],
-   "temperatura": 16.41,
+   "temperatura": 16.39,
    "abbigliamento": "maniche lunghe",
    "probabilita_pioggia": 0,
    "conferma": 100,
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "01:20",
+    "letto": "15:32",
     "in_programma": [
      "Allenamento Senior Femminile 20:30-22:00"
     ],
@@ -160,9 +244,9 @@
    }
   }
  ],
- "testo": "METEO ALLENAMENTO · mercoledì 28/10/2026 · controllo delle 23:02\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nALLERTA per il 28/10 (bollettino DPC del 27/10 14:27, parte «domani»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> SI FA\nNessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).\nDecisione da comunicare entro le 15:30.\nAbbigliamento: maniche lunghe (17 °C previsti).\nProbabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> SI FA\nNessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.\nAbbigliamento: maniche lunghe (17 °C previsti).\nProbabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nSENIOR FEMMINILE · 20:30-22:00\n>> SI FA\nNessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.\nAbbigliamento: maniche lunghe (16 °C previsti).\nProbabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.\nmm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nRADAR: NON DISPONIBILE (il radar esiste solo per oggi: RainViewer tiene le ultime 2 ore).\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar NO",
+ "testo": "METEO ALLENAMENTO · mercoledì 28/10/2026 · controllo delle 15:32\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nALLERTA per il 28/10 (bollettino DPC del 28/10 14:37, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> SI FA\nNessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).\nDecisione da comunicare entro le 15:30.\nAbbigliamento: maniche lunghe (17 °C previsti).\nProbabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> SI FA\nNessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.\nAbbigliamento: maniche lunghe (17 °C previsti).\nProbabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.\nmm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nSENIOR FEMMINILE · 20:30-22:00\n>> SI FA\nNessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.\nAbbigliamento: maniche lunghe (16 °C previsti).\nProbabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.\nmm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0\n\nRADAR 14:30→15:30: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar ok\nProssimo controllo previsto alle 17:30.",
  "decisione_alle": null,
- "prossimo_controllo": "15:30",
+ "prossimo_controllo": "17:30",
  "prossimi_allenamenti": [
   {
    "data": "2026-10-28",
@@ -317,7 +401,7 @@
   }
  ],
  "calendario": {
-  "letto": "01:20",
+  "letto": "15:32",
   "scheda": "https://golee.it/clubs/sharks-football-asd",
   "errore": null,
   "allenamenti_oggi": [
