@@ -1,31 +1,44 @@
-METEO ALLENAMENTO · mercoledì 28/10/2026 · controllo delle 17:32
+METEO ALLENAMENTO · lunedì 02/11/2026 · controllo delle 23:02
 Campo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica
-ALLERTA per il 28/10 (bollettino DPC del 28/10 14:37, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA
+ALLERTA per il 02/11 (bollettino DPC del 01/11 14:55, parte «domani»): temporali GIALLA · idrogeologico GIALLA · idraulico GIALLA
 
 MINI FLAG + UNDER 10 · 18:30-20:00
->> SI FA
-Nessuna allerta temporali; pioggia prevista da 0 modelli su 5 (si annulla da 3).
+>> ANNULLATO · pioggia prevista
+Pioggia prevista nella fascia da 5 modelli su 5 (ICON-2I, ICON-EU, ECMWF, GFS, UKMO); si annulla da 3. In più allerta GIALLA per temporali.
 Decisione da comunicare entro le 15:30.
-Abbigliamento: maniche lunghe (17 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
+La probabilità di pioggia dei modelli non vale: con temporali possibili non sanno dire dove pioverà.
+mm previsti 19-20: ICON-2I 4,8 · ICON-EU 1,0 · ECMWF 2,7 · GFS 0,9 · UKMO 3,5
+ICON-2I ieri per questa fascia dava 4,8 mm, oggi 4,8.
 
 UNDER 13 + UNDER 15 · 18:30-20:00
->> SI FA
-Nessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.
-Abbigliamento: maniche lunghe (17 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
+>> NON PREVEDIBILE · temporali possibili
+Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 480 J/kg, soglia 400).
+Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.
+Abbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).
+Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.
+mm previsti 19-20: ICON-2I 4,8 · ICON-EU 1,0 · ECMWF 2,7 · GFS 0,9 · UKMO 3,5
+ICON-2I ieri per questa fascia dava 4,8 mm, oggi 4,8.
 
 SENIOR FEMMINILE · 20:30-22:00
->> SI FA
-Nessuna allerta arancione/rossa, nessun segnale di temporale, nessuno dei 5 modelli prevede pioggia nella fascia.
-Abbigliamento: maniche lunghe (16 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
+>> NON PREVEDIBILE · temporali possibili
+Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 460 J/kg, soglia 400).
+Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.
+Abbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).
+Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.
+mm previsti 21-22: ICON-2I 6,5 · ICON-EU 0,6 · ECMWF 3,4 · GFS 1,6 · UKMO 3,4
+ICON-2I ieri per questa fascia dava 6,5 mm, oggi 6,5.
 
-RADAR 16:30→17:30: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
+SENIOR M · 20:30-22:00
+>> NON PREVEDIBILE · temporali possibili
+Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 460 J/kg, soglia 400).
+Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.
+Abbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).
+Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.
+mm previsti 21-22: ICON-2I 6,5 · ICON-EU 0,6 · ECMWF 3,4 · GFS 1,6 · UKMO 3,4
+ICON-2I ieri per questa fascia dava 6,5 mm, oggi 6,5.
+
+RADAR: NON DISPONIBILE (il radar esiste solo per oggi: RainViewer tiene le ultime 2 ore).
 FULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;
   Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.
-FONTI: bollettino ok · modelli 5/5 · radar ok
-CALENDARIO GOLEE alle 19:34: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
+FONTI: bollettino ok · modelli 5/5 · radar NO
+CALENDARIO GOLEE alle 23:02: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
