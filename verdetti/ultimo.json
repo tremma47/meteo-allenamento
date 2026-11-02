@@ -1,30 +1,30 @@
 {
  "versione": 2,
- "tipo": "orientativo",
- "pianificato": "23:00",
- "fotografato": "2026-11-01 23:02",
+ "tipo": "verdetto",
+ "pianificato": "17:30",
+ "fotografato": "2026-11-02 17:32",
  "eseguito_da": "github-actions",
  "controlli": [
   "15:30",
   "17:30"
  ],
  "data": "2026-11-02",
- "controllo": "2026-11-02 23:02",
+ "controllo": "2026-11-02 17:32",
  "campo": "Campo sportivo Paolo Borsellino",
  "bollettino": {
-  "nome": "20261101_1455",
-  "emesso": "2026-11-01 14:55",
-  "parte": "tomorrow",
+  "nome": "20261102_1457",
+  "emesso": "2026-11-02 14:57",
+  "parte": "today",
   "zona": "Nord-Occidentale e isole Egadi e Ustica",
   "livelli": {
    "temporali": "GIALLA",
    "idrogeologico": "GIALLA",
-   "idraulico": "GIALLA"
+   "idraulico": "NESSUNA"
   },
   "testo": {
    "temporali": "Ordinaria / ALLERTA GIALLA",
    "idrogeologico": "Ordinaria / ALLERTA GIALLA",
-   "idraulico": "Ordinaria / ALLERTA GIALLA"
+   "idraulico": "Assenza di fenomeni significativi prevedibili / NESSUNA ALLERTA"
   },
   "avviso": null
  },
@@ -37,8 +37,92 @@
   "UKMO"
  ],
  "modelli_errore": {},
- "radar": null,
- "radar_errore": "il radar esiste solo per oggi: RainViewer tiene le ultime 2 ore",
+ "radar": {
+  "fotogrammi": [
+   {
+    "ora": "16:30",
+    "entro": {
+     "10": 140,
+     "25": 2006,
+     "50": 3914,
+     "100": 11319
+    },
+    "vicina_km": 4,
+    "direzione": "O"
+   },
+   {
+    "ora": "16:40",
+    "entro": {
+     "10": 192,
+     "25": 1944,
+     "50": 3939,
+     "100": 11457
+    },
+    "vicina_km": 7,
+    "direzione": "SO"
+   },
+   {
+    "ora": "16:50",
+    "entro": {
+     "10": 614,
+     "25": 2842,
+     "50": 4733,
+     "100": 12302
+    },
+    "vicina_km": 0,
+    "direzione": "O"
+   },
+   {
+    "ora": "17:00",
+    "entro": {
+     "10": 1082,
+     "25": 2861,
+     "50": 5047,
+     "100": 11557
+    },
+    "vicina_km": 0,
+    "direzione": "O"
+   },
+   {
+    "ora": "17:10",
+    "entro": {
+     "10": 706,
+     "25": 2204,
+     "50": 4441,
+     "100": 9550
+    },
+    "vicina_km": 1,
+    "direzione": "S"
+   },
+   {
+    "ora": "17:20",
+    "entro": {
+     "10": 232,
+     "25": 1931,
+     "50": 4226,
+     "100": 9059
+    },
+    "vicina_km": 3,
+    "direzione": "S"
+   },
+   {
+    "ora": "17:30",
+    "entro": {
+     "10": 222,
+     "25": 1003,
+     "50": 4022,
+     "100": 8018
+    },
+    "vicina_km": 1,
+    "direzione": "S"
+   }
+  ],
+  "tessere_mancanti": 0,
+  "km_per_pixel": 0.48,
+  "aggiornato": "17:30",
+  "ritardo_min": 2
+ },
+ "radar_errore": null,
  "verdetti": [
   {
    "gruppo": "Mini Flag + Under 10",
@@ -50,15 +134,14 @@
     "Pioggia prevista nella fascia da 5 modelli su 5 (ICON-2I, ICON-EU, ECMWF, GFS, UKMO); si annulla da 3. In più allerta GIALLA per temporali.",
     "Decisione da comunicare entro le 15:30.",
     "La probabilità di pioggia dei modelli non vale: con temporali possibili non sanno dire dove pioverà.",
-    "mm previsti 19-20: ICON-2I 4,8 · ICON-EU 1,0 · ECMWF 2,7 · GFS 0,9 · UKMO 3,5",
-    "ICON-2I ieri per questa fascia dava 4,8 mm, oggi 4,8."
+    "mm previsti 19-20: ICON-2I 6,8 · ICON-EU 0,8 · ECMWF 1,9 · GFS 2,7 · UKMO 3,2"
    ],
    "mm_per_modello": {
-    "ICON-2I": 4.8,
-    "ICON-EU": 1.0,
-    "ECMWF": 2.7,
-    "GFS": 0.9,
-    "UKMO": 3.5
+    "ICON-2I": 6.8,
+    "ICON-EU": 0.8,
+    "ECMWF": 1.9,
+    "GFS": 2.7,
+    "UKMO": 3.2
    },
    "modelli_piovosi": [
     "ICON-2I",
@@ -69,20 +152,21 @@
    ],
    "segnali": [
     "allerta GIALLA per temporali",
+    "ICON-2I ha cambiato idea rispetto a ieri (4,8 → 6,8 mm nella fascia)",
     "aria instabile (CAPE fino a 480 J/kg, soglia 400)"
    ],
    "icon2i_oggi_ieri_mm": [
-    4.8,
+    6.8,
     4.8
    ],
-   "temperatura": 15.55,
+   "temperatura": 15.790000000000001,
    "abbigliamento": "maniche lunghe e k-way per la pioggia",
-   "probabilita_pioggia": 94,
+   "probabilita_pioggia": 100,
    "conferma": 0,
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "16:48",
+    "letto": "17:32",
     "in_programma": [
      "Allenamento MiniFlag 18:30-20:00"
     ],
@@ -96,19 +180,18 @@
    "esito": "NON PREVEDIBILE",
    "titolo": "temporali possibili",
    "motivi": [
-    "Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 480 J/kg, soglia 400).",
+    "Temporali possibili sul punto: allerta GIALLA per temporali; ICON-2I ha cambiato idea rispetto a ieri (4,8 → 6,8 mm nella fascia); aria instabile (CAPE fino a 480 J/kg, soglia 400).",
     "Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.",
     "Abbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).",
     "Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.",
-    "mm previsti 19-20: ICON-2I 4,8 · ICON-EU 1,0 · ECMWF 2,7 · GFS 0,9 · UKMO 3,5",
-    "ICON-2I ieri per questa fascia dava 4,8 mm, oggi 4,8."
+    "mm previsti 19-20: ICON-2I 6,8 · ICON-EU 0,8 · ECMWF 1,9 · GFS 2,7 · UKMO 3,2"
    ],
    "mm_per_modello": {
-    "ICON-2I": 4.8,
-    "ICON-EU": 1.0,
-    "ECMWF": 2.7,
-    "GFS": 0.9,
-    "UKMO": 3.5
+    "ICON-2I": 6.8,
+    "ICON-EU": 0.8,
+    "ECMWF": 1.9,
+    "GFS": 2.7,
+    "UKMO": 3.2
    },
    "modelli_piovosi": [
     "ICON-2I",
@@ -119,20 +202,21 @@
    ],
    "segnali": [
     "allerta GIALLA per temporali",
+    "ICON-2I ha cambiato idea rispetto a ieri (4,8 → 6,8 mm nella fascia)",
     "aria instabile (CAPE fino a 480 J/kg, soglia 400)"
    ],
    "icon2i_oggi_ieri_mm": [
-    4.8,
+    6.8,
     4.8
    ],
-   "temperatura": 15.55,
+   "temperatura": 15.790000000000001,
    "abbigliamento": "maniche lunghe e k-way per la pioggia",
-   "probabilita_pioggia": 94,
+   "probabilita_pioggia": 100,
    "conferma": null,
    "nota_instabilita": null,
    "coach": {
     "stato": "in_programma",
-    "letto": "16:48",
+    "letto": "17:32",
     "in_programma": [
      "Allenamento Under 13 18:30-20:00",
      "Allenamento Under 15 18:30-20:00"
@@ -147,19 +231,18 @@
    "esito": "NON PREVEDIBILE",
    "titolo": "temporali possibili",
    "motivi": [
-    "Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 460 J/kg, soglia 400).",
+    "Temporali possibili sul punto: allerta GIALLA per temporali; ICON-2I ha cambiato idea rispetto a ieri (6,5 → 1,0 mm nella fascia); aria instabile (CAPE fino a 410 J/kg, soglia 400).",
     "Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.",
     "Abbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).",
     "Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.",
-    "mm previsti 21-22: ICON-2I 6,5 · ICON-EU 0,6 · ECMWF 3,4 · GFS 1,6 · UKMO 3,4",
-    "ICON-2I ieri per questa fascia dava 6,5 mm, oggi 6,5."
+    "mm previsti 21-22: ICON-2I 1,0 · ICON-EU 0,6 · ECMWF 2,4 · GFS 2,6 · UKMO 3,1"
    ],
    "mm_per_modello": {
-    "ICON-2I": 6.5,
-    "ICON-EU": 0.6,
-    "ECMWF": 3.4,
-    "GFS": 1.6,
-    "UKMO": 3.4
+    "ICON-2I": 1.0,
+    "ICON-EU": 0.6000000000000001,
+    "ECMWF": 2.4,
+    "GFS": 2.5999999999999996,
+    "UKMO": 3.0999999999999996
    },
    "modelli_piovosi": [
     "ICON-2I",
@@ -170,24 +253,25 @@
    ],
    "segnali": [
     "allerta GIALLA per temporali",
-    "aria instabile (CAPE fino a 460 J/kg, soglia 400)"
+    "ICON-2I ha cambiato idea rispetto a ieri (6,5 → 1,0 mm nella fascia)",
+    "aria instabile (CAPE fino a 410 J/kg, soglia 400)"
    ],
    "icon2i_oggi_ieri_mm": [
-    6.5,
+    1.0,
     6.5
    ],
-   "temperatura": 15.98,
+   "temperatura": 16.14,
    "abbigliamento": "maniche lunghe e k-way per la pioggia",
-   "probabilita_pioggia": 94,
+   "probabilita_pioggia": 100,
    "conferma": null,
    "nota_instabilita": null,
    "coach": {
-    "stato": "in_programma",
-    "letto": "16:48",
-    "in_programma": [
-     "Allenamento Senior Femminile 20:30-22:00"
-    ],
-    "annullati": []
+    "stato": "annullato",
+    "letto": "17:32",
+    "in_programma": [],
+    "annullati": [
+     "Senior Femminile"
+    ]
    }
   },
   {
@@ -197,19 +281,18 @@
    "esito": "NON PREVEDIBILE",
    "titolo": "temporali possibili",
    "motivi": [
-    "Temporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 460 J/kg, soglia 400).",
+    "Temporali possibili sul punto: allerta GIALLA per temporali; ICON-2I ha cambiato idea rispetto a ieri (6,5 → 1,0 mm nella fascia); aria instabile (CAPE fino a 410 J/kg, soglia 400).",
     "Si va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.",
     "Abbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).",
     "Conferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.",
-    "mm previsti 21-22: ICON-2I 6,5 · ICON-EU 0,6 · ECMWF 3,4 · GFS 1,6 · UKMO 3,4",
-    "ICON-2I ieri per questa fascia dava 6,5 mm, oggi 6,5."
+    "mm previsti 21-22: ICON-2I 1,0 · ICON-EU 0,6 · ECMWF 2,4 · GFS 2,6 · UKMO 3,1"
    ],
    "mm_per_modello": {
-    "ICON-2I": 6.5,
-    "ICON-EU": 0.6,
-    "ECMWF": 3.4,
-    "GFS": 1.6,
-    "UKMO": 3.4
+    "ICON-2I": 1.0,
+    "ICON-EU": 0.6000000000000001,
+    "ECMWF": 2.4,
+    "GFS": 2.5999999999999996,
+    "UKMO": 3.0999999999999996
    },
    "modelli_piovosi": [
     "ICON-2I",
@@ -220,26 +303,27 @@
    ],
    "segnali": [
     "allerta GIALLA per temporali",
-    "aria instabile (CAPE fino a 460 J/kg, soglia 400)"
+    "ICON-2I ha cambiato idea rispetto a ieri (6,5 → 1,0 mm nella fascia)",
+    "aria instabile (CAPE fino a 410 J/kg, soglia 400)"
    ],
    "icon2i_oggi_ieri_mm": [
-    6.5,
+    1.0,
     6.5
    ],
-   "temperatura": 15.98,
+   "temperatura": 16.14,
    "abbigliamento": "maniche lunghe e k-way per la pioggia",
-   "probabilita_pioggia": 94,
+   "probabilita_pioggia": 100,
    "conferma": null,
    "nota_instabilita": null,
    "coach": {
     "stato": "non_tracciato",
-    "letto": "16:48"
+    "letto": "17:32"
    }
   }
  ],
- "testo": "METEO ALLENAMENTO · lunedì 02/11/2026 · controllo delle 23:02\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nALLERTA per il 02/11 (bollettino DPC del 01/11 14:55, parte «domani»): temporali GIALLA · idrogeologico GIALLA · idraulico GIALLA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> ANNULLATO · pioggia prevista\nPioggia prevista nella fascia da 5 modelli su 5 (ICON-2I, ICON-EU, ECMWF, GFS, UKMO); si annulla da 3. In più allerta GIALLA per temporali.\nDecisione da comunicare entro le 15:30.\nLa probabilità di pioggia dei modelli non vale: con temporali possibili non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 4,8 · ICON-EU 1,0 · ECMWF 2,7 · GFS 0,9 · UKMO 3,5\nICON-2I ieri per questa fascia dava 4,8 mm, oggi 4,8.\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 480 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 4,8 · ICON-EU 1,0 · ECMWF 2,7 · GFS 0,9 · UKMO 3,5\nICON-2I ieri per questa fascia dava 4,8 mm, oggi 4,8.\n\nSENIOR FEMMINILE · 20:30-22:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 460 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 21-22: ICON-2I 6,5 · ICON-EU 0,6 · ECMWF 3,4 · GFS 1,6 · UKMO 3,4\nICON-2I ieri per questa fascia dava 6,5 mm, oggi 6,5.\n\nSENIOR M · 20:30-22:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali; aria instabile (CAPE fino a 460 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 21-22: ICON-2I 6,5 · ICON-EU 0,6 · ECMWF 3,4 · GFS 1,6 · UKMO 3,4\nICON-2I ieri per questa fascia dava 6,5 mm, oggi 6,5.\n\nRADAR: NON DISPONIBILE (il radar esiste solo per oggi: RainViewer tiene le ultime 2 ore).\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar NO",
+ "testo": "METEO ALLENAMENTO · lunedì 02/11/2026 · controllo delle 17:32\nCampo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica\nALLERTA per il 02/11 (bollettino DPC del 02/11 14:57, parte «oggi»): temporali GIALLA · idrogeologico GIALLA · idraulico NESSUNA\n\nMINI FLAG + UNDER 10 · 18:30-20:00\n>> ANNULLATO · pioggia prevista\nPioggia prevista nella fascia da 5 modelli su 5 (ICON-2I, ICON-EU, ECMWF, GFS, UKMO); si annulla da 3. In più allerta GIALLA per temporali.\nDecisione da comunicare entro le 15:30.\nLa probabilità di pioggia dei modelli non vale: con temporali possibili non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 6,8 · ICON-EU 0,8 · ECMWF 1,9 · GFS 2,7 · UKMO 3,2\n\nUNDER 13 + UNDER 15 · 18:30-20:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali; ICON-2I ha cambiato idea rispetto a ieri (4,8 → 6,8 mm nella fascia); aria instabile (CAPE fino a 480 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 19-20: ICON-2I 6,8 · ICON-EU 0,8 · ECMWF 1,9 · GFS 2,7 · UKMO 3,2\n\nSENIOR FEMMINILE · 20:30-22:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali; ICON-2I ha cambiato idea rispetto a ieri (6,5 → 1,0 mm nella fascia); aria instabile (CAPE fino a 410 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 21-22: ICON-2I 1,0 · ICON-EU 0,6 · ECMWF 2,4 · GFS 2,6 · UKMO 3,1\n\nSENIOR M · 20:30-22:00\n>> NON PREVEDIBILE · temporali possibili\nTemporali possibili sul punto: allerta GIALLA per temporali; ICON-2I ha cambiato idea rispetto a ieri (6,5 → 1,0 mm nella fascia); aria instabile (CAPE fino a 410 J/kg, soglia 400).\nSi va al campo sapendo che può diluviare: radar pulito e modelli bassi non valgono quando le celle nascono sul posto. Si annulla solo per fulmini: FULMINI VISTI O SENTITI = STOP.\nAbbigliamento: maniche lunghe e k-way per la pioggia (16 °C previsti).\nConferma non calcolabile: con temporali possibili i modelli non sanno dire dove pioverà.\nmm previsti 21-22: ICON-2I 1,0 · ICON-EU 0,6 · ECMWF 2,4 · GFS 2,6 · UKMO 3,1\n\nRADAR 16:30→17:30: pioggia entro 10 km: sì · entro 25 km: sì · eco più vicina a 1 km verso S · area entro 100 km: 11319→8018 pixel (1 px ≈ 0,48 km). Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.\nFULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;\n  Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.\nFONTI: bollettino ok · modelli 5/5 · radar ok",
  "decisione_alle": null,
- "prossimo_controllo": "15:30",
+ "prossimo_controllo": null,
  "prossimi_allenamenti": [
   {
    "data": "2026-11-02",
@@ -399,7 +483,7 @@
   }
  ],
  "calendario": {
-  "letto": "16:48",
+  "letto": "17:32",
   "scheda": "https://golee.it/clubs/sharks-football-asd",
   "errore": null,
   "allenamenti_oggi": [
@@ -420,14 +504,8 @@
     "inizio": "18:30",
     "fine": "20:00",
     "titolo": "Allenamento Under 15"
-   },
-   {
-    "data": "2026-11-02",
-    "inizio": "20:30",
-    "fine": "22:00",
-    "titolo": "Allenamento Senior Femminile"
    }
   ],
-  "allenamenti_in_calendario": 20
+  "allenamenti_in_calendario": 19
  }
 }
