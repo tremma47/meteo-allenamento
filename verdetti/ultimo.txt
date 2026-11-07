@@ -1,43 +1,11 @@
-METEO ALLENAMENTO · mercoledì 04/11/2026 · controllo delle 15:32
+METEO ALLENAMENTO · sabato 07/11/2026 · controllo delle 19:56
 Campo sportivo Paolo Borsellino · zona allerta: Nord-Occidentale e isole Egadi e Ustica
-ALLERTA: BOLLETTINO NON DISPONIBILE (HTTP 501 su latest_all.zip). Controlla a mano: https://mappe.protezionecivile.gov.it/it/mappe-rischi/bollettino-di-criticita/
+ALLERTA per il 07/11 (bollettino DPC del 07/11 14:05, parte «oggi»): temporali NESSUNA · idrogeologico NESSUNA · idraulico NESSUNA
 
-MINI FLAG + UNDER 10 · 18:30-20:00
->> NON PREVEDIBILE · bollettino allerta non disponibile
-Senza bollettino la regola dei piccoli (annullare con qualsiasi allerta temporali) non si può applicare. Controlla a mano: https://mappe.protezionecivile.gov.it/it/mappe-rischi/bollettino-di-criticita/
-Pioggia prevista da 0 modelli su 5 (si annulla da 3).
-Decisione da comunicare entro le 15:30.
-Abbigliamento: maniche lunghe (17 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
+Oggi (sabato) nessun gruppo si allena. Per vedere comunque i verdetti: --gruppi tutti
 
-UNDER 13 + UNDER 15 · 18:30-20:00
->> NON PREVEDIBILE · bollettino allerta non disponibile
-Non so se c'è un'allerta arancione o rossa. Controlla a mano: https://mappe.protezionecivile.gov.it/it/mappe-rischi/bollettino-di-criticita/
-Senza allerta grave i grandi si allenano anche con pioggia. FULMINI VISTI O SENTITI = STOP.
-Abbigliamento: maniche lunghe (17 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 19-20: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
-
-SENIOR FEMMINILE · 20:30-22:00
->> NON PREVEDIBILE · bollettino allerta non disponibile
-Non so se c'è un'allerta arancione o rossa. Controlla a mano: https://mappe.protezionecivile.gov.it/it/mappe-rischi/bollettino-di-criticita/
-Senza allerta grave i grandi si allenano anche con pioggia. FULMINI VISTI O SENTITI = STOP.
-Abbigliamento: maniche lunghe (16 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
-
-SENIOR M · 20:30-22:00
->> NON PREVEDIBILE · bollettino allerta non disponibile
-Non so se c'è un'allerta arancione o rossa. Controlla a mano: https://mappe.protezionecivile.gov.it/it/mappe-rischi/bollettino-di-criticita/
-Senza allerta grave i grandi si allenano anche con pioggia. FULMINI VISTI O SENTITI = STOP.
-Abbigliamento: maniche lunghe (16 °C previsti).
-Probabilità di pioggia nella fascia 0% (scenari di 4 modelli): conferma 100%.
-mm previsti 21-22: ICON-2I 0,0 · ICON-EU 0,0 · ECMWF 0,0 · GFS 0,0 · UKMO 0,0
-
-RADAR 14:30→15:30: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
+RADAR 18:50→19:50: nessuna pioggia entro 100 km dal campo. Vale nelle 3 ore prima dell'inizio; con celle in formazione non dice dove pioverà.
 FULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guarda la mappa: https://www.lightningmaps.org/?lang=it#m=oss;t=3;s=0;o=0;b=;ts=0;y=38.1434;x=13.3508;z=9;d=2;dl=2;dc=0;
   Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.
-FONTI: bollettino NO · modelli 5/5 · radar ok
-Prossimo controllo previsto alle 17:30.
-CALENDARIO GOLEE alle 21:09: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
+FONTI: bollettino ok · modelli 5/5 · radar ok
+CALENDARIO GOLEE alle 19:56: nessun gruppo di oggi è tracciato in calendario.
