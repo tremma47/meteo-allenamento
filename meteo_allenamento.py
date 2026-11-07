@@ -243,10 +243,25 @@ def _ultimo_bollettino(repo):
     url = f"https://raw.githubusercontent.com/{repo}/master/files/all/latest_all.zip"
     if "bollettino" in GUASTI:
         raise FonteNonRisponde("guasto simulato con --simula-guasto")
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Range": "bytes=-16384"})
+    # Da novembre 2026 raw.githubusercontent.com risponde 501 a «gli ultimi N byte» (bytes=-N),
+    # ma accetta inizio e fine espliciti: prima la lunghezza (bytes=0-0 -> Content-Range .../TOTALE),
+    # poi la coda. Se il server ignora la richiesta parziale (200), si taglia la coda dal file intero.
     try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Range": "bytes=0-0"})
         with urllib.request.urlopen(req, timeout=60) as r:
-            coda = r.read()[-16384:]
+            totale = r.headers.get("Content-Range", "").rpartition("/")[2]
+            intero = r.read() if r.status == 200 else None
+        if intero is not None:
+            coda = intero[-16384:]
+        else:
+            if not totale.isdigit():
+                raise FonteNonRisponde("latest_all.zip senza lunghezza (Content-Range)")
+            fine = int(totale) - 1
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Range": f"bytes={max(0, fine - 16383)}-{fine}"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                coda = r.read()[-16384:]
+    except FonteNonRisponde:
+        raise
     except urllib.error.HTTPError as e:
         raise FonteNonRisponde(f"HTTP {e.code} su latest_all.zip") from None
     except Exception as e:
