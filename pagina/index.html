@@ -511,7 +511,15 @@ footer .firma{font-size:.88rem;color:var(--grigio);margin-top:4px}
     testa.appendChild(el('p', 'kicker', dataLunga(ora.data)));
     stato.appendChild(testa);
 
-    if (eta >= 2) {
+    // Avviso grave solo se è passato un giorno di allenamento senza verdetto: dopo il mercoledì,
+    // venerdì e sabato non c'è niente da controllare (07/11/2026). Calendario vuoto o vecchio:
+    // non si sa, vale la regola di prima (2 giorni).
+    var noti = foto.prossimi_allenamenti || [];
+    var calendarioValido = noti.length && noti[noti.length - 1].data >= ora.data;
+    var saltato = calendarioValido
+      ? noti.some(function (a) { return a.data > foto.data && a.data < ora.data; })
+      : eta >= 2;
+    if (saltato) {
       var g = el('div', 'avviso grave');
       g.appendChild(el('strong', null, 'Il controllo automatico non gira dal ' + dataLunga(foto.data) + '. '));
       g.appendChild(document.createTextNode('Questa pagina non è aggiornata: per oggi chiedi ai coach sul gruppo WhatsApp.'));
