@@ -155,7 +155,7 @@
    "nota_instabilita": "aria instabile (CAPE fino a 1540 J/kg, soglia 400)",
    "coach": {
     "stato": "in_programma",
-    "letto": "17:32",
+    "letto": "20:55",
     "in_programma": [
      "Allenamento MiniFlag 18:30-20:00"
     ],
@@ -192,7 +192,7 @@
    "nota_instabilita": "aria instabile (CAPE fino a 1540 J/kg, soglia 400)",
    "coach": {
     "stato": "in_programma",
-    "letto": "17:32",
+    "letto": "20:55",
     "in_programma": [
      "Allenamento Under 13 18:30-20:00",
      "Allenamento Under 15 18:30-20:00"
@@ -230,7 +230,7 @@
    "nota_instabilita": "aria instabile (CAPE fino a 800 J/kg, soglia 400)",
    "coach": {
     "stato": "in_programma",
-    "letto": "17:32",
+    "letto": "20:55",
     "in_programma": [
      "Allenamento Senior Femminile 20:30-22:00"
     ],
@@ -267,7 +267,7 @@
    "nota_instabilita": "aria instabile (CAPE fino a 800 J/kg, soglia 400)",
    "coach": {
     "stato": "non_tracciato",
-    "letto": "17:32"
+    "letto": "20:55"
    }
   }
  ],
@@ -433,7 +433,7 @@
   }
  ],
  "calendario": {
-  "letto": "17:32",
+  "letto": "20:55",
   "scheda": "https://golee.it/clubs/sharks-football-asd",
   "errore": null,
   "allenamenti_oggi": [
