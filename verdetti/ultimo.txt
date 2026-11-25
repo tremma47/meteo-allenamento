@@ -40,4 +40,4 @@ FULMINI: nessuna fonte leggibile in automatico. Prima di uscire e al campo guard
   Fulmine visto o sentito = tutti fuori dal campo, qualunque sia il verdetto.
 FONTI: bollettino ok · modelli 3/5 · radar NO
   Modelli che NON hanno risposto: ICON-2I: <urlopen error _ssl.c:1018: The handshake operation timed out>; ICON-EU: <urlopen error _ssl.c:1018: The handshake operation timed out>.
-CALENDARIO GOLEE alle 23:02: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
+CALENDARIO GOLEE alle 05:01: Mini Flag + Under 10 in programma (Allenamento MiniFlag 18:30-20:00) · Under 13 + Under 15 in programma (Allenamento Under 13 18:30-20:00, Allenamento Under 15 18:30-20:00) · Senior Femminile in programma (Allenamento Senior Femminile 20:30-22:00).
